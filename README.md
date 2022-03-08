@@ -1,5 +1,5 @@
 # PopcornTasters: A Movies Reviews App
-Aplicación para reseñas de películas. 
+Aplicación enfocada para clientes con dispositivos móviles, desarrollada usando Ionic & Angular.
 
 Es una aplicación similar a Rotten Tomatoes.
 
