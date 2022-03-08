@@ -10,7 +10,6 @@ Desarrolladores: Figueroa Alonso, C.I. V-28.536.894 y Muchacho Ricardo, C.I. V-2
 ---
 
 ## **Descripción del proyecto:**
-prueba de rick pull request
 
 ### *Requisitos para su realización*:
 ...
