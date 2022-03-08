@@ -1,7 +1,0 @@
-{
-  "name": "pctproject",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
