@@ -27,7 +27,7 @@ Desarrolladores: Figueroa Alonso, C.I. V-28.536.894 y Muchacho Ricardo, C.I. V-2
 - Películas más populares del momento situadas en el dashboard.
 - La descripción de la película estará dentro del perfil de la misma:
     - Sus imágenes.
-    - Tráilers.
+    - Sus tráilers.
     - Ratings más valiosos (ó los últimos ratings).
     - Comentarios.			
                     
