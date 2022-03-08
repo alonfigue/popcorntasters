@@ -1,5 +1,5 @@
 # PopcornTasters: A Movies Reviews App
-Aplicación de reseñas de películas. 
+Aplicación para reseñas de películas. 
 
 Es una aplicación similar a Rotten Tomatoes.
 
