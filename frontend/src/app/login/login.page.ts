@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
     
     console.log(username, password);
     
-    fetch('http://localhost:3000/auth/login',{
+    fetch('http://localhost:3000/auth/login', {
     method: 'POST',
     headers: new Headers({
       // Encabezados

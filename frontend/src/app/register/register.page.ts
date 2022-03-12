@@ -30,13 +30,14 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
   }
   
-  name:string;
   username:string;
+  name:string;
   password:string;
   
   register(){
-    const name = this.name;
+
     const username = this.username;
+    const name = this.name;
     const password = this.password;
     
     fetch('http://localhost:3000/auth/register',{
@@ -46,9 +47,9 @@ export class RegisterPage implements OnInit {
       'Content-Type': 'application/json'
     }),
     body: JSON.stringify(
-      {
-        "name": name,
+      {  
         "username": username,
+        "name": name,
         "password": password
       })
       
