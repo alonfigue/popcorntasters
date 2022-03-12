@@ -32,14 +32,12 @@ export class RegisterPage implements OnInit {
   
   name:string;
   username:string;
-  pass:string;
-  cpass:string;
+  password:string;
   
   register(){
     const name = this.name;
     const username = this.username;
-    const pass = this.pass;
-    const cpass = this.cpass;
+    const password = this.password;
     
     fetch('http://localhost:3000/auth/register',{
     method: 'POST',
@@ -51,8 +49,7 @@ export class RegisterPage implements OnInit {
       {
         "name": name,
         "username": username,
-        "pass": pass,
-        "cpass": cpass
+        "password": password
       })
       
     }).then(response=>{
