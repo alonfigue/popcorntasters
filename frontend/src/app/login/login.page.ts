@@ -28,7 +28,7 @@ export class LoginPage implements OnInit {
     headers: new Headers({
       // Encabezados
       'Content-Type': 'application/json'
-    }),
+    }),   
     body: JSON.stringify(
       {    
         "username": username,

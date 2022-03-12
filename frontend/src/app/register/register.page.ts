@@ -1,19 +1,3 @@
-/*import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-register',
-  templateUrl: './register.page.html',
-  styleUrls: ['./register.page.scss'],
-})
-export class RegisterPage implements OnInit {
-  
-  constructor() { }
-  
-  ngOnInit() {
-  }
-  
-}*/
-
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
 
@@ -71,3 +55,19 @@ export class RegisterPage implements OnInit {
     this.router.navigate(['/login']);
   }
 }
+
+/*import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-register',
+  templateUrl: './register.page.html',
+  styleUrls: ['./register.page.scss'],
+})
+export class RegisterPage implements OnInit {
+  
+  constructor() { }
+  
+  ngOnInit() {
+  }
+  
+}*/
