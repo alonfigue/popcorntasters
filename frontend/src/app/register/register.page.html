@@ -1,0 +1,35 @@
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+</ion-content>-->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <ion-card class="ion-margin">
+    <br>
+    <ion-item>
+      <ion-input [(ngModel)]="username" type="text" placeholder="Username"></ion-input>
+    </ion-item>
+    <br>    
+    <ion-item>
+      <ion-input [(ngModel)]="name" type="text" required="true" placeholder="Name"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input [(ngModel)]="password" type="password" placeholder="Password"></ion-input>
+    </ion-item>
+
+  </ion-card>
+  <ion-button class="ion-margin" (click)= "register()">Register</ion-button>
+  
+</ion-content>
