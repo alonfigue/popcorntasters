@@ -1,8 +1,39 @@
 <ion-header>
+  <ion-toolbar color="danger">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="header">    
+    <img src="assets/logos/logo1.png" />
+    <h1>Log in to PopcornTasters</h1>
+  </div>
+
+  <form id="form">
+    <app-data-input placeholder="Username"></app-data-input>
+    <app-data-input type="password" placeholder="Password"></app-data-input>
+    <ion-button expand="block" shape="round" (click)= "login()">Log in</ion-button>
+  </form>
+
+  <div id="register">
+  <br/>
+  <ion-item>
+  <p>Don't have an account? <a href="/register"> Sign Up</a></p> 
+  </ion-item>
+  </div>
+
+</ion-content>
+
+
+
+
+<!--<ion-header>
   <ion-toolbar>
     <ion-title>login</ion-title>
   </ion-toolbar>
 </ion-header> 
+
 
 
 <ion-content>
@@ -13,7 +44,7 @@
   </div>
 </ion-content>
 
-<!--
+--
   <ion-header>
     <ion-toolbar>
       <ion-title>Login</ion-title>
