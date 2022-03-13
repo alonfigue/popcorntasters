@@ -1,3 +1,9 @@
+ion-toolbar {
+    --background: #cf3c4f;
+
+
+   
+}
 
 ion-content {
     --background: #222428;
@@ -9,9 +15,7 @@ ion-content {
         padding-top: 100px;
         padding-right: 40px;
         padding-bottom: 0px;
-        padding-left: 40px;
-        
-        
+        padding-left: 40px;          
         
         img {
             width: 125px;
@@ -21,28 +25,45 @@ ion-content {
         }
         
         h1 {
+            font-family:Arial, Helvetica, sans-serif;
             font-weight: 700;
             font-size:26px;
             color: #ffffff;
             margin-bottom: 15%;
-        }
-        
+        }        
     }
     
-    #form {
-        margin-top: 15px;
+    ion-item {
+        border-radius: 50px;
+        height: 55px;
+        box-shadow: 1px 8px 8px 0px rgba(0, 0, 0, 0.08);
+        --hightlight-height: 0px;
+        
+        ion-input {
+            font-size: 18px;
+            --padding-top: 20px;
+            --padding-bottom: 15px;
+            --padding-start: 5px;
+        }
+        
+        a {
+            font-size: 17px;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+        }
+    }
+    
+    ion-buton {
+        margin-top: 35px;
         padding-left: 30px;
         padding-right: 30px;
+        height: 48px;
+        font-size: 18px;
+        text-transform: initial;
+        border-radius: 50px;
+        box-shadow: 1px 8px 8px 0px rgba(0, 0, 0, 0.05);
+        --box-shadow: none;
         
-        ion-button {
-            margin-top: 35px;
-            height: 48px;
-            font-size: 18px;
-            text-transform: initial;
-            border-radius: 50px;
-            box-shadow: 1px 8px 8px 0px rgba(0, 0, 0, 0.05);
-            --box-shadow: none;
-        }
         
         p {
             
@@ -50,11 +71,11 @@ ion-content {
         }
         
     }
-}
-
-
-#register {
-    padding-right: 70px;
-    padding-bottom: 50px;
-    padding-left: 70px;
+    
+    
+    #register {
+        padding-right: 70px;
+        padding-bottom: 50px;
+        padding-left: 70px;
+    }
 }

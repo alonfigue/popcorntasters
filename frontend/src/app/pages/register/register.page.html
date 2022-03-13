@@ -1,35 +1,40 @@
-<!--<ion-header>
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  
-</ion-content>-->
-
 <ion-header>
   <ion-toolbar>
-    <ion-title>Register</ion-title>
+    <ion-title></ion-title>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/login"> Back to Login</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  
-  <ion-card class="ion-margin">
-    <br>
-    <ion-item>
-      <ion-input [(ngModel)]="username" type="text" placeholder="Username"></ion-input>
-    </ion-item>
-    <br>    
-    <ion-item>
-      <ion-input [(ngModel)]="name" type="text" required="true" placeholder="Name"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item>
-      <ion-input [(ngModel)]="password" type="password" placeholder="Password"></ion-input>
-    </ion-item>
 
-  </ion-card>
-  <ion-button class="ion-margin" (click)= "register()">Register</ion-button>
+<ion-content>
+
+  <div id="header">    
+    <h1>Create your Account</h1>
+    <h2>Enter your data:</h2>
+  </div>
   
+  <br>
+  <ion-item>
+    <ion-input [(ngModel)]="username" type="text" placeholder="Username"></ion-input>
+  </ion-item>
+  <br>    
+  <ion-item>
+    <ion-input [(ngModel)]="name" type="text" required="true" placeholder="Name"></ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-input [(ngModel)]="password" type="password" placeholder="Password"></ion-input>
+  </ion-item>
+  
+  <ion-button expand="block" shape="round" (click)= "register()">Sign up</ion-button>
+  
+  <div id="register">
+    <p>By pressing 'Sign up' you agree to <br />our terms & conditions.</p>
+    <br/>
+    <ion-item>
+      <p>Already have an Account? <a href="/login"> Log in</a></p> 
+    </ion-item>
+  </div>
+    
 </ion-content>
