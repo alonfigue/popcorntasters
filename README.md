@@ -19,7 +19,7 @@ Desarrolladores: Figueroa Alonso, C.I. V-28.536.894 y Muchacho Ricardo, C.I. V-2
 
 ### *Funciones*:
 #### General
-- Registro de usuario.
+- Registro de usuarios.
 - Inicio de sesión y cierre de sesión.
  
 #### Visualización
