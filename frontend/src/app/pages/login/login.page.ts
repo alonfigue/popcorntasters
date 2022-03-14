@@ -36,29 +36,20 @@ export class LoginPage implements OnInit {
       })
       
     }).then(response=>{
-      console.log(response);
-      this.router.navigate(['/main']);
-      return response.json()
+      if(response.ok) {
+        console.log('Datos ingresados correctos...');
+        console.log(response);
+        this.router.navigate(['/main']);
+        //flag
+        localStorage.setItem('loggedin', 'true')
+        return response.json()     
+      }else{
+        throw "Datos ingresados incorrectos..." 
+      }
+
     }).then(r =>{
       console.log(r);
     }).catch(e => console.log(e))
     
   }
 }
-
-/*import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
-})
-export class LoginPage implements OnInit {
-  
-  constructor() { }
-  
-  ngOnInit() {
-  }
-  
-}
-*/
