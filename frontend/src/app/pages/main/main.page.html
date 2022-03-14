@@ -1,15 +1,20 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons slot="end">
       <ion-icon name="menu-outline"></ion-icon>
     </ion-buttons>
-    <ion-title>Popular Movies</ion-title>
+    <ion-title slot="start">Top Popular Movies</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  
   <ion-list>
     <ion-item *ngFor = "let movie of top20">
+      <!--Positioning movie image-->
+      <ion-avatar slot="start">
+        <img src="{{movie.image}}" alt="">
+      </ion-avatar>
       <ion-label>{{movie.title}}</ion-label>
     </ion-item>
   </ion-list>

@@ -15,9 +15,9 @@ export class MainPage implements OnInit {
   ngOnInit() {
     this.http.get<any>('http://localhost:3000/movies/top20')
     .subscribe((res) => {
-      //onsole.log(res);
+      console.log(res);
       this.top20 = res;
-     // console.log(this.top20);
+      //console.log(this.top20);
       //this.top20 = a;
       //console.log(this.top20);
     });
