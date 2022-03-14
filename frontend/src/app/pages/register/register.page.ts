@@ -19,7 +19,7 @@ export class RegisterPage implements OnInit {
   password:string;
   
   register(){
-
+    
     const username = this.username;
     const name = this.name;
     const password = this.password;
@@ -42,8 +42,12 @@ export class RegisterPage implements OnInit {
       if (response.redirected == true)
       {
         window.location.replace(response.url)
-      }
+      }           
+      console.log('New account created...');
+      this.router.navigate(['/login']);
       return response.json()
+      
+      
     }).then(r =>{
       console.log(r);
     }).catch(e => console.log(e))
@@ -52,22 +56,6 @@ export class RegisterPage implements OnInit {
     //cont1.appendChild(p);
     //p.innerHTML = "Succesfully updated";
     
-    this.router.navigate(['/login']);
+    
   }
 }
-
-/*import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-register',
-  templateUrl: './register.page.html',
-  styleUrls: ['./register.page.scss'],
-})
-export class RegisterPage implements OnInit {
-  
-  constructor() { }
-  
-  ngOnInit() {
-  }
-  
-}*/
