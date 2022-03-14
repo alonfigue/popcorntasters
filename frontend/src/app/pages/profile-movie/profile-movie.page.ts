@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile-movie',
@@ -6,10 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-movie.page.scss'],
 })
 export class ProfileMoviePage implements OnInit {
-
-  constructor() { }
-
+  
+  //creating property
+  profileId: string;
+  movie;
+  comment= [];
+  
+  //instantiating
+  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute) { }
+  
   ngOnInit() {
-  }
-
+    this.profileId = this.activatedRoute.snapshot.paramMap.get("id");    
+    this.http.get<any>("http://localhost:3000/movies/details/" + this.profileId)
+    .subscribe((res) => {
+      this.movie = res.details;
+      this.comment = res.comments;
+      //console.log(this.movie)
+      
+      console.log(res)
+    });
+  }  
 }

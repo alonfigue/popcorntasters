@@ -1,9 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>profile-movie</ion-title>
+    <ion-title>Movie Profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+      <ion-button routerLink="/main">Go Back</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeMd="4" offsetMd="4">
+        <!--If movie is true (exists), do the rest of the code-->
+        <div *ngIf="movie">
+          <ion-card>
+            <ion-card-content class="ion-text-center">
+              <img src="{{movie.image}}" alt="">
+              <ion-card-title>
+                {{movie.title}}
+              </ion-card-title>
+              <p> Take a look to the trailer, 
+                <a href="{{movie.trailer}}" target="_blank">clicking here</a>
+              </p>              
+              <p>Rating: {{movie.rating}}</p>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  
+  
 </ion-content>

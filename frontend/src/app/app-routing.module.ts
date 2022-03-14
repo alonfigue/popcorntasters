@@ -29,7 +29,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule)
   },
   {
-    path: 'profile-movie',
+    path: 'profile-movie/:id',
     loadChildren: () => import('./pages/profile-movie/profile-movie.module').then( m => m.ProfileMoviePageModule)
   },
   {
