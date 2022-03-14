@@ -27,14 +27,15 @@ const routes: Routes = [
   {
     path: 'menu',
     loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule)
-  },  {
+  },
+  {
     path: 'profile-movie',
-    loadChildren: () => import('./profile-movie/profile-movie.module').then( m => m.ProfileMoviePageModule)
+    loadChildren: () => import('./pages/profile-movie/profile-movie.module').then( m => m.ProfileMoviePageModule)
   },
   {
     path: 'profile-user',
-    loadChildren: () => import('./profile-user/profile-user.module').then( m => m.ProfileUserPageModule)
-  },
+    loadChildren: () => import('./pages/profile-user/profile-user.module').then( m => m.ProfileUserPageModule)
+  }
 
 
 ];
