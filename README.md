@@ -11,12 +11,6 @@ Desarrolladores: Figueroa Alonso, C.I. V-28.536.894 y Muchacho Ricardo, C.I. V-2
 
 ## **Descripción del proyecto:**
 
-### *Requisitos para su realización*:
-...
-
-### *Requisitos Técnicos*:
-...
-
 ### *Funciones*:
 #### General
 - Registro de usuarios.
@@ -38,3 +32,11 @@ Desarrolladores: Figueroa Alonso, C.I. V-28.536.894 y Muchacho Ricardo, C.I. V-2
  - Poseer un perfil editable, donde podrá cambiar sus datos personales y sus datos visibles para otros usuarios.
  - Añadir un top de películas.
  - Agregar un listado con los últimos ratings del usuario y comentarios añadidos.
+
+
+### *Requisitos para su realización*:
+...
+
+
+### *Requisitos Técnicos*:
+...
