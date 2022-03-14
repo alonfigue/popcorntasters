@@ -17,21 +17,38 @@
         <div *ngIf="movie">
           <ion-card>
             <ion-card-content class="ion-text-center">
-              <img src="{{movie.image}}" alt="">
               <ion-card-title>
-                {{movie.title}}
+                {{movie.title}} ({{movie.year}})
               </ion-card-title>
+              <br>
+              <img src="{{movie.image}}" alt="">
+              <br>
+
+              <p>Genre: {{movie.genre}}</p>
+              <p>General Rating: {{movie.rating}}</p>
               <p> Take a look to the trailer, 
-                <a href="{{movie.trailer}}" target="_blank">clicking here</a>
+                <a href="{{movie.trailer}}" target="_blank">here</a>
               </p>              
-              <p>Rating: {{movie.rating}}</p>
+              <br>
+              <div>
+                <h2>Description:</h2>
+                <p>{{movie.description}}</p>
+              </div>
+              
+              <br>
+              <ion-list id="comment-list">
+                <h2>Comments:</h2>
+                <ion-item *ngFor = "let com of comment" [routerLink]="['/profile-movie/' + com.movie_id]">
+                  <ion-label slot="start">User: {{com.username}}</ion-label>
+                  <p>({{com.description}}).</p>
+                </ion-item>
+                
+              </ion-list>   
             </ion-card-content>
           </ion-card>
         </div>
       </ion-col>
     </ion-row>
   </ion-grid>
-  
-  
   
 </ion-content>
