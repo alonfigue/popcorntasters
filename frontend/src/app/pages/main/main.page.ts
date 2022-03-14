@@ -8,14 +8,18 @@ import { HttpClient } from "@angular/common/http";
 })
 export class MainPage implements OnInit {
   
-  movies = [];
+  top20 = [];
   
   constructor(private http: HttpClient) {}
   
   ngOnInit() {
-    this.http.get('http://localhost:3000/movies/top20')
+    this.http.get<any>('http://localhost:3000/movies/top20')
     .subscribe((res) => {
-      console.log(res)
+      //onsole.log(res);
+      this.top20 = res;
+     // console.log(this.top20);
+      //this.top20 = a;
+      //console.log(this.top20);
     });
   }
   

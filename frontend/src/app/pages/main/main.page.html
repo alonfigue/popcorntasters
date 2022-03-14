@@ -1,9 +1,17 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>main</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon name="menu-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Popular Movies</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-item *ngFor = "let movie of top20">
+      <ion-label>{{movie.title}}</ion-label>
+    </ion-item>
+  </ion-list>
+  
 </ion-content>
