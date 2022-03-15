@@ -28,7 +28,7 @@ Desarrolladores: Figueroa Alonso, C.I. V-28.536.894 y Muchacho Ricardo, C.I. V-2
  - Dar rating a cualquier película (afectando el rating general de la misma).
  - Comentar sobre una película.
  - Votar si una crítica ajena le resulta útil o no (sin afectar el rating general de la película).
- - Buscar películas por género, por año de publicación y por nombre.
+ - Buscar películas por nombre, por género y por año de publicación.
  - Poseer un perfil editable, donde podrá cambiar sus datos personales y sus datos visibles para otros usuarios.
  - Añadir un top de películas.
  - Agregar un listado con los últimos ratings del usuario y comentarios añadidos.
