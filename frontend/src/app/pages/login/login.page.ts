@@ -39,7 +39,7 @@ export class LoginPage implements OnInit {
       if(response.ok) {
         console.log('The user exists and the data matches...');
         console.log(response);
-        this.router.navigate(['/main']);
+        this.router.navigate(['/menu/main']);
         //flag
         localStorage.setItem('loggedin', 'true')
         return response.json()     

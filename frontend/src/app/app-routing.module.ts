@@ -6,7 +6,7 @@ import { LoggedinGuard } from './guards/loggedin.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
@@ -20,32 +20,14 @@ const routes: Routes = [
     canActivate: [NotLoggedinGuard]
   },
   {
-    path: 'main',
-    loadChildren: () => import('./pages/main/main.module').then( m => m.MainPageModule),
-    canActivate: [LoggedinGuard]
-  },
-  {
     path: 'menu',
-    loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule)
+    loadChildren: () => import('./pages/menu/menu.module').then( m => m.MenuPageModule),
+    canActivate: [LoggedinGuard]
   },
   {
     path: 'profile-movie/:id',
     loadChildren: () => import('./pages/profile-movie/profile-movie.module').then( m => m.ProfileMoviePageModule)
-  },
-  {
-    path: 'profile-user',
-    loadChildren: () => import('./pages/profile-user/profile-user.module').then( m => m.ProfileUserPageModule)
-  },
-  {
-    path: 'user-activity',
-    loadChildren: () => import('./pages/user-activity/user-activity.module').then( m => m.UserActivityPageModule)
-  },
-  {
-    path: 'user-top',
-    loadChildren: () => import('./pages/user-top/user-top.module').then( m => m.UserTopPageModule)
   }
-
-
 
 ];
 
