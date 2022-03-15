@@ -8,12 +8,15 @@ import { SearchMoviePageRoutingModule } from './search-movie-routing.module';
 
 import { SearchMoviePage } from './search-movie.page';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SearchMoviePageRoutingModule
+    SearchMoviePageRoutingModule,
+    Ng2SearchPipeModule
   ],
   declarations: [SearchMoviePage]
 })

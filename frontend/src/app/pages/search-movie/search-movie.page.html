@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>search-movie</ion-title>
+    <ion-title>Search a Movie</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+
+  <ion-searchbar placeholder="Try *Batman*" [(ngModel)]="searchTerm" showCancelButton="focus" animated>
+
+  </ion-searchbar>
+
+<ion-list>
+  <ion-item *ngFor="let moviesearch of movieS | filter:searchTerm ">
+    <ion-label> {{moviesearch.title}} </ion-label>
+    <ion-label> {{moviesearch.genre}} </ion-label>
+    <ion-label> {{moviesearch.year}} </ion-label>
+  </ion-item>
+</ion-list>  
+  
 
 </ion-content>
