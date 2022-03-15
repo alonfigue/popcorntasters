@@ -25,6 +25,10 @@ const routes: Routes = [
         loadChildren: () => import('../user-top/user-top.module').then( m => m.UserTopPageModule)
       }, 
       {
+        path: 'search-movie',
+        loadChildren: () => import('../search-movie/search-movie.module').then( m => m.SearchMoviePageModule)
+      },
+      {
         path:'',
         redirectTo: '/menu/main',
         pathMatch: 'full'
