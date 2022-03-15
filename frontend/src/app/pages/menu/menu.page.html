@@ -9,7 +9,7 @@
       <ion-list>
         <ion-menu-toggle auto-hide="false" *ngFor="let page of pages; let i = index">
           <ion-item (click)="changeSelectedIndex(i)" routerDirection="root" [routerLink]="[page.url]"
-          lines="none" detail="false" [class.selected]="indexSelected == i">
+          lines="none" detail="false" [class.selected]="selectedIndex == i">
           <ion-icon slot="start" [name]="page.icon + '-outline'"></ion-icon>
           <ion-label>{{page.title}}</ion-label>
         </ion-item>

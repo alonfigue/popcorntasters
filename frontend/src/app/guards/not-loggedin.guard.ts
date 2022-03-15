@@ -15,7 +15,7 @@ export class NotLoggedinGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if(localStorage.getItem('loggedin')){
-        this.router.navigate(['/main']);
+        this.router.navigate(['menu/main']);
         return false;
       }else{
         return true;
