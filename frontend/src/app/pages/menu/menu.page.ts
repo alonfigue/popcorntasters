@@ -35,7 +35,7 @@ export class MenuPage implements OnInit {
       icon: 'star'
     },
     {
-      title: 'Search Movie',
+      title: 'Search a Movie',
       url: '/menu/search-movie',
       icon: 'search'
     }

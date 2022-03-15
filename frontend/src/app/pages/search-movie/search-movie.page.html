@@ -1,22 +1,26 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Search a Movie</ion-title>
+    <ion-title>Search Movies</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+      <ion-button routerLink="/menu/main">Go Back</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-
-  <ion-searchbar placeholder="Try *Batman*" [(ngModel)]="searchTerm" showCancelButton="focus" animated>
-
-  </ion-searchbar>
-
-<ion-list>
-  <ion-item *ngFor="let moviesearch of movieS | filter:searchTerm ">
-    <ion-label> {{moviesearch.title}} </ion-label>
-    <ion-label> {{moviesearch.genre}} </ion-label>
-    <ion-label> {{moviesearch.year}} </ion-label>
-  </ion-item>
-</ion-list>  
   
-
+  <ion-searchbar placeholder="Try *Batman*" [(ngModel)]="searchTerm" showCancelButton="focus" animated>
+    
+  </ion-searchbar>
+  
+  <ion-list>
+    <ion-item *ngFor="let moviesearch of movieS | filter:searchTerm" [routerLink]="['/profile-movie/' + moviesearch.id]">
+      <ion-label> {{moviesearch.title}} </ion-label>
+      <ion-label> {{moviesearch.genre}} </ion-label>
+      <ion-label> {{moviesearch.year}} </ion-label>
+    </ion-item>
+  </ion-list>  
+  
+  
 </ion-content>
