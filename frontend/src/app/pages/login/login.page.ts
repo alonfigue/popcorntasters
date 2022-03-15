@@ -37,14 +37,14 @@ export class LoginPage implements OnInit {
       
     }).then(response=>{
       if(response.ok) {
-        console.log('Datos ingresados correctos...');
+        console.log('The user exists and the data matches...');
         console.log(response);
         this.router.navigate(['/main']);
         //flag
         localStorage.setItem('loggedin', 'true')
         return response.json()     
       }else{
-        throw "Datos ingresados incorrectos..." 
+        throw "The user does not exists or the data does not matches..." 
       }
 
     }).then(r =>{

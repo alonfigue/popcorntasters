@@ -35,7 +35,16 @@ const routes: Routes = [
   {
     path: 'profile-user',
     loadChildren: () => import('./pages/profile-user/profile-user.module').then( m => m.ProfileUserPageModule)
+  },
+  {
+    path: 'user-activity',
+    loadChildren: () => import('./pages/user-activity/user-activity.module').then( m => m.UserActivityPageModule)
+  },
+  {
+    path: 'user-top',
+    loadChildren: () => import('./pages/user-top/user-top.module').then( m => m.UserTopPageModule)
   }
+
 
 
 ];
