@@ -27,6 +27,10 @@ const routes: Routes = [
       {
         path: 'search-movie',
         loadChildren: () => import('../search-movie/search-movie.module').then( m => m.SearchMoviePageModule)
+      },,
+      {
+        path: 'profile-movie/:id',
+        loadChildren: () => import('../profile-movie/profile-movie.module').then( m => m.ProfileMoviePageModule)
       },
       {
         path:'',

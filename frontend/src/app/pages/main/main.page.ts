@@ -8,6 +8,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class MainPage implements OnInit {
   
+  i=0;
   top20 = [];
   
   constructor(private http: HttpClient) {}
