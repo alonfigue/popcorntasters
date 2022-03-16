@@ -1,9 +1,26 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>profile-user</ion-title>
+    <ion-title>User Profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+      <ion-button routerLink="/menu/main">Go Back</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  
+  <div *ngIf="person">
+    <p>
+      Username: {{person.username}}
+      
+      Name: {{person.name}}
+    </p>
+    
+  </div>
+  
+  <ion-button  expand="block" shape="round" (click)= "editP()">Edit profile</ion-button>
+  <ion-button expand="block" shape="round" (click)= "deleteA()">Delete account</ion-button>
+  
+  
 </ion-content>
