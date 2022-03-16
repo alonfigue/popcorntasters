@@ -11,18 +11,11 @@
 
 <ion-content>
   
-  <div *ngIf="person">
-    <p>
-      Username: {{person.username}}
-      
-      Name: {{person.name}}
-    </p>
-    
-  </div>
+  
   
   
   <ion-button routerLink="/profile-user-edit"  expand="block" shape="round">Edit profile</ion-button>
-  <ion-button expand="block" shape="round" (click)= "deleteA()">Delete account</ion-button>
+  <ion-button routerLink="/profile-user-delete" expand="block" shape="round" (click)= "deleteA()">Delete account</ion-button>
   
   
 </ion-content> 

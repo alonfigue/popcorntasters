@@ -44,6 +44,7 @@ export class ProfileUserEditPage implements OnInit {
       const name = this.name;
       const password = this.password;
       
+      
       fetch('http://localhost:3000/users/' + this.usernameA,{
       method: 'PUT',
       headers: new Headers({

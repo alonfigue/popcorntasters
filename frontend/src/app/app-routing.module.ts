@@ -47,7 +47,12 @@ const routes: Routes = [
   {
     path: 'user-top',
     loadChildren: () => import('./pages/user-top/user-top.module').then( m => m.UserTopPageModule)
-  }, 
+  },   
+  {
+    path: 'profile-user-delete',
+    loadChildren: () => import('./pages/profile-user-delete/profile-user-delete.module').then( m => m.ProfileUserDeletePageModule)
+  },
+
   
   
 ];
