@@ -10,13 +10,14 @@ import { Router } from '@angular/router';
 })
 export class ProfileUserPage implements OnInit {
   
- // username:string;
+  people = [];
+  data;
   
   constructor(private route: Router, private http: HttpClient, private activatedRoute: ActivatedRoute) { }
   
   ngOnInit() {
     
-   /* this.http.get<any>('http://localhost:3000/users/' + username);
+    /* this.http.get<any>('http://localhost:3000/users/' + username);
     .subscribe((res) => {
       console.log(res);
       this.ratings = res;
@@ -34,14 +35,25 @@ export class ProfileUserPage implements OnInit {
     });*/
   }
   
-  editP(){
+  username: string;
+  
+  
+  getData(){
     
-    //this.route.navigate(['/profile-user-edit/']);
+    const username = this.username;
     
+    console.log('this is working')
+    
+    this.http.get<any>('http://localhost:3000/users/' + this.username)
+    .subscribe((res) => {
+      console.log(res);
+      this.data = res;
+      this.people = res.people;
+      
+      
+    });
+
   }
-  
-  
-  deleteA() {
-  }
-  
+
 }
+  
