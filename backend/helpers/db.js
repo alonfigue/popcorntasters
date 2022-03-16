@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const User = require("../models/user");
 const Movie = require("../models/movie");
 const Comment = require("../models/comment");
+const Rating = require("../models/rating");
 
 dotenv.config({ path: "../.env" });
 
@@ -111,6 +112,23 @@ async function create_comment(movie_id, username, description) {
   return comment;
 }
 
+async function create_rating(movie_id, username, rating) {
+  const new_rating = new Rating({
+    username: username,
+    movie_id: movie_id,
+    rating: rating,
+  });
+  await new_rating
+    .save()
+    .then((result) => {
+      console.log(result);
+      //res.send(JSON.stringify(result));
+    })
+    .catch((err) => console.log(err));
+
+  return new_rating;
+}
+
 async function update_movie(
   movie_id,
   genres,
@@ -198,4 +216,5 @@ module.exports = {
   create_comment,
   delete_comment,
   create_detailed_movie,
+  create_rating,
 };
