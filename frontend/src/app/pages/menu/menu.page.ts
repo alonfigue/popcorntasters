@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -9,6 +10,7 @@ import { AlertController, NavController } from '@ionic/angular';
 export class MenuPage implements OnInit {
   
   selectedIndex: number = 0;
+  username;
   
   pages = [
     // index 0
@@ -18,12 +20,12 @@ export class MenuPage implements OnInit {
       icon: 'eye'
     },
     
-    //index 1... so on and so forth
+    /*index 1... so on and so forth
     {
       title: 'Profile',
-      url: '/menu/profile-user',
+      url: '/menu/profile-user/:username',
       icon: 'person'
-    },
+    },*/
     {
       title: 'User Activity',
       url: '/menu/user-activity',
@@ -42,7 +44,7 @@ export class MenuPage implements OnInit {
 
   ]
   
-  constructor(public alertController: AlertController, public navCtrl: NavController) { }
+  constructor(public alertController: AlertController, public navCtrl: NavController, private route: Router) { }
   
   ngOnInit() {
   }
@@ -52,6 +54,13 @@ export class MenuPage implements OnInit {
     
   }
   
+
+  profile(){
+    this.route.navigate(['menu/profile-user/' + this.username]);
+
+  }
+
+
   //logout function
   
   async logout(){

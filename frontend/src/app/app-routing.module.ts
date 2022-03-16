@@ -33,7 +33,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/profile-movie/profile-movie.module').then( m => m.ProfileMoviePageModule)
   },
   {
-    path: 'profile-user-edit',
+    path: 'profile-user-edit/:user',
     loadChildren: () => import('./pages/profile-user-edit/profile-user-edit.module').then( m => m.ProfileUserEditPageModule)
   }
   
