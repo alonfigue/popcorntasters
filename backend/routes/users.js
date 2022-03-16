@@ -3,6 +3,7 @@ var router = express.Router();
 const bcrypt = require("bcryptjs");
 const dotenv = require("dotenv");
 var User = require("../models/user");
+var Comment = require("../models/comment");
 
 var router = express.Router();
 
@@ -68,6 +69,19 @@ router.delete("/:user", async (req, res) => {
 router.get("/:user", async (req, res) => {
   username = req.params.user;
   r = await User.findOne({ username: username });
+  res.send(JSON.stringify(r));
+});
+
+router.get("/:user/comments", async (req, res) => {
+  username = req.params.user;
+  r = await Comment.find({ username: username });
+  res.send(JSON.stringify(r));
+});
+
+router.get("/:user/movies", async (req, res) => {
+  username = req.params.user;
+  r = "working on it";
+  //r = await Comment.find({ username: username });
   res.send(JSON.stringify(r));
 });
 
