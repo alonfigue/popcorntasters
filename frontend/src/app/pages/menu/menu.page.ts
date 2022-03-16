@@ -20,22 +20,18 @@ export class MenuPage implements OnInit {
       icon: 'eye'
     },
     
-    /*index 1... so on and so forth
-    {
-      title: 'Profile',
-      url: '/menu/profile-user/:username',
-      icon: 'person'
-    },*/
+    //index 1... so on and so forth
+  /*
     {
       title: 'User Activity',
-      url: '/menu/user-activity',
+      url: '/user-activity',
       icon: 'book'
     },
     {
       title: 'Top Movies (User)',
-      url: '/menu/user-top',
+      url: '/user-top',
       icon: 'star'
-    },
+    },*/
     {
       title: 'Search a Movie',
       url: '/search-movie',

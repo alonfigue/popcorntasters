@@ -7,14 +7,8 @@
     </ion-header>
     <ion-content>
       <ion-list>
-
-        <ion-menu-toggle auto-hide="false">
-          <ion-item (click)="profile()" routerDirection="root" lines="none" detail="false">
-            <ion-icon slot="start" [name]="'person-outline'"></ion-icon>
-            <ion-label>Profile</ion-label>
-          </ion-item>
-        </ion-menu-toggle>
-
+        
+        
         <ion-menu-toggle auto-hide="false" *ngFor="let page of pages; let i = index">
           <ion-item (click)="changeSelectedIndex(i)" routerDirection="root" [routerLink]="[page.url]"
           lines="none" detail="false" [class.selected]="selectedIndex == i">
@@ -23,7 +17,20 @@
         </ion-item>
       </ion-menu-toggle>
       
-   
+      
+      <ion-menu-toggle auto-hide="false">
+        <ion-item [routerLink]="['/user-activity/']" routerDirection="root" lines="none" detail="false">
+          <ion-icon slot="start" [name]="'book-outline'"></ion-icon>
+          <ion-label>User Activity</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      
+      <ion-menu-toggle auto-hide="false">
+        <ion-item [routerLink]="['/user-top/']" routerDirection="root" lines="none" detail="false">
+          <ion-icon slot="start" [name]="'star-outline'"></ion-icon>
+          <ion-label>Favorite Movies</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
       
       
       <ion-menu-toggle auto-hide="false">

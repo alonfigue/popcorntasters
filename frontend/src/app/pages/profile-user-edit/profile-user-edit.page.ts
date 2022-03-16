@@ -11,39 +11,40 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProfileUserEditPage implements OnInit {
 
-  profileId: string;
+ /* profileId: string;
   movie;
   comment= [];
-  
+  */
   constructor(private router: Router, private http: HttpClient, private activatedRoute: ActivatedRoute) { }
   
   ngOnInit() {
   }
 
-  /*
-  
-  username:string;
+  usernameA:string;
+  username: string;
   name:string;
   password:string;
+
   
+   
   editUser(){
     
-    this.profileId = this.activatedRoute.snapshot.paramMap.get("id");    
+   /* this.profileId = this.activatedRoute.snapshot.paramMap.get("id");    
     this.http.get<any>("http://localhost:3000/movies/details/" + this.profileId)
     .subscribe((res) => {
       this.movie = res.details;
       this.comment = res.comments;
       //console.log(this.movie)
       
-      console.log(res)
+      console.log(res)*/
       
      
-      
+      const usernameA = this.usernameA;
       const username = this.username;
       const name = this.name;
       const password = this.password;
       
-      fetch('http://localhost:3000/auth/register',{
+      fetch('http://localhost:3000/users/' + this.usernameA,{
       method: 'PUT',
       headers: new Headers({
         // Encabezados
@@ -76,7 +77,7 @@ export class ProfileUserEditPage implements OnInit {
       //p.innerHTML = "Succesfully updated";
       
       
-    } */
+    } 
     
   }
   
