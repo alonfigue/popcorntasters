@@ -96,10 +96,15 @@ async function create_detailed_movie(
 }
 
 async function create_comment(movie_id, username, description) {
+  movie = await Movie.findOne({ id: movie_id });
+
+  title = movie.title;
+
   const comment = new Comment({
     movie_id: movie_id,
     username: username,
     description: description,
+    movie_title: title,
   });
   await comment
     .save()
@@ -113,10 +118,15 @@ async function create_comment(movie_id, username, description) {
 }
 
 async function create_rating(movie_id, username, rating) {
+  movie = await Movie.findOne({ id: movie_id });
+
+  title = movie.title;
+
   const new_rating = new Rating({
     username: username,
     movie_id: movie_id,
     rating: rating,
+    movie_title: title,
   });
   await new_rating
     .save()

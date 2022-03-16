@@ -14,6 +14,10 @@ const ratingSchema = new Schema({
     type: String,
     required: true,
   },
+  movie_title: {
+    type: String,
+    required: true,
+  },
 });
 
 const Rating = mongoose.model("Rating", ratingSchema);

@@ -48,6 +48,7 @@ router.get("/details/:id", async (req, res) => {
 
 router.post("/comment/:id", async (req, res) => {
   movie_id = req.params.id;
+  movie_title = req.body.title;
   username = req.body.username;
   description = req.body.description;
 
