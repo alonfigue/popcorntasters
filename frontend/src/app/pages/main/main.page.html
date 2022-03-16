@@ -1,11 +1,18 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/profile-user/']">
+        <ion-icon name="person"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
     <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title slot="start">Most Popular Movies</ion-title>
+    <ion-title class="ion-text-center">Most Popular Movies</ion-title>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content>
   

@@ -11,19 +11,7 @@ const routes: Routes = [
       {
         path: 'main',
         loadChildren: () => import('../main/main.module').then( m => m.MainPageModule),
-      },
-      {
-        path: 'profile-user/:username',
-        loadChildren: () => import('../profile-user/profile-user.module').then( m => m.ProfileUserPageModule)
-      },
-      {
-        path: 'user-activity',
-        loadChildren: () => import('../user-activity/user-activity.module').then( m => m.UserActivityPageModule)
-      },
-      {
-        path: 'user-top',
-        loadChildren: () => import('../user-top/user-top.module').then( m => m.UserTopPageModule)
-      }, 
+      },  
       {
         path:'',
         redirectTo: '/menu/main',

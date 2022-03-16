@@ -33,9 +33,26 @@ const routes: Routes = [
     loadChildren: () => import('./pages/profile-movie/profile-movie.module').then( m => m.ProfileMoviePageModule)
   },
   {
-    path: 'profile-user-edit/:user',
+    path: 'profile-user-edit',
     loadChildren: () => import('./pages/profile-user-edit/profile-user-edit.module').then( m => m.ProfileUserEditPageModule)
-  }
+  },
+  {
+    path: 'profile-user',
+    loadChildren: () => import('./pages//profile-user/profile-user.module').then( m => m.ProfileUserPageModule)
+  },
+  {
+    path: 'user-activity',
+    loadChildren: () => import('./pages/user-activity/user-activity.module').then( m => m.UserActivityPageModule)
+  },
+  {
+    path: 'user-top',
+    loadChildren: () => import('./pages/user-top/user-top.module').then( m => m.UserTopPageModule)
+  },   
+  {
+    path: 'profile-user-delete',
+    loadChildren: () => import('./pages/profile-user-delete/profile-user-delete.module').then( m => m.ProfileUserDeletePageModule)
+  },
+  
   
   
 ];

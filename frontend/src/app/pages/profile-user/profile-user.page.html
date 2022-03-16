@@ -1,6 +1,7 @@
+
 <ion-header>
   <ion-toolbar>
-    <ion-title>User Profile</ion-title>
+    <ion-title class="ion-text-center">User Profile</ion-title>
     <ion-buttons slot="start">
       <ion-icon name="chevron-back-outline"></ion-icon>
       <ion-button routerLink="/menu/main">Go Back</ion-button>
@@ -9,18 +10,24 @@
 </ion-header>
 
 <ion-content>
-  
-  <div *ngIf="person">
-    <p>
-      Username: {{person.username}}
-      
-      Name: {{person.name}}
-    </p>
+  <ion-card>
+    <ion-item>
+      <ion-input [(ngModel)]="username" type="text" required="true" placeholder="Enter your username and click the button *submit*"></ion-input>
+    </ion-item>
+    <ion-button class="ion-margin" (click)= "getData()">Submit</ion-button>
+    <br>
     
-  </div>
+    <div *ngIf="data">
+      <p>
+        Username: {{data.username}}
+        
+        Name: {{data.name}}
+      </p>    
+    </div>
+    
+    <br>  
+    <ion-button routerLink="/profile-user-edit"  expand="block" shape="round">Edit profile</ion-button>
+    <ion-button routerLink="/profile-user-delete" expand="block" shape="round" (click)= "deleteA()">Delete account</ion-button>
+  </ion-card>
   
-  <ion-button  expand="block" shape="round" (click)= "editP()">Edit profile</ion-button>
-  <ion-button expand="block" shape="round" (click)= "deleteA()">Delete account</ion-button>
-  
-  
-</ion-content>
+</ion-content> 
