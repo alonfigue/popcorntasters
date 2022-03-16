@@ -16,7 +16,7 @@ const userSchema = new Schema({
   },
   movies: [
     {
-      id: { type: String, unique: true },
+      id: String,
       title: String,
     },
   ],
