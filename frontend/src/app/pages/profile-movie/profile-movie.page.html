@@ -9,7 +9,6 @@
 </ion-header>
 
 <ion-content>
-  
   <ion-grid>
     <ion-row>
       <ion-col sizeMd="4" offsetMd="4">
@@ -20,88 +19,94 @@
               <ion-card-title>
                 {{movie.title}} ({{movie.year}})
               </ion-card-title>
-              <br>
-              <img src="{{movie.image}}" alt="">
-              <br>
-              
+              <br />
+              <img src="{{movie.image}}" alt="" />
+              <br />
+
               <p>Genre: {{movie.genre}}</p>
               <p>General Rating: {{movie.rating}}</p>
-              <p> Take a look to the trailer, 
+              <p>
+                Take a look to the trailer,
                 <a href="{{movie.trailer}}" target="_blank">here</a>
-              </p>  
-              <p>Movie Id: {{movie.id}}</p>            
-              <br>
+              </p>
+              <p>Movie Id: {{movie.id}}</p>
+              <br />
               <div>
                 <h2>Description:</h2>
                 <p>{{movie.description}}</p>
               </div>
-              
-              <br>
+
+              <br />
               <ion-list class="list">
                 <h2>Comments:</h2>
-                <ion-item *ngFor = "let com of comment">
+                <ion-item *ngFor="let com of comment">
                   <ion-label slot="start">User: {{com.username}}</ion-label>
                   <p>({{com.description}}).</p>
-                </ion-item>                
-              </ion-list>   
-              <br>
+                </ion-item>
+              </ion-list>
+              <br />
               <ion-list class="list">
                 <h2>Ratings:</h2>
-                <ion-item *ngFor = "let ra of ratinga">
+                <ion-item *ngFor="let ra of ratinga">
                   <ion-label slot="start">User: {{ra.username}}</ion-label>
                   <p>{{ra.rating}}</p>
-                </ion-item>                
-              </ion-list> 
+                </ion-item>
+              </ion-list>
             </ion-card-content>
           </ion-card>
         </div>
       </ion-col>
     </ion-row>
   </ion-grid>
-  
+
   <div>
-    
     <h4 class="ion-text-center">Comment section:</h4>
     <ion-item>
-      <ion-input [(ngModel)]="movie_id" type="text" required="true" placeholder="Enter the Id of the movie (located above)"></ion-input>
+      <ion-input
+        [(ngModel)]="username"
+        type="text"
+        required="true"
+        placeholder="Enter your username"
+      ></ion-input>
     </ion-item>
-    <br>
+    <br />
     <ion-item>
-      <ion-input [(ngModel)]="username" type="text" required="true" placeholder="Enter your username"></ion-input>
-    </ion-item>    
-    <br>
-    <ion-item>
-      <ion-input [(ngModel)]="description" type="text" placeholder="Comment"></ion-input>
+      <ion-input
+        [(ngModel)]="description"
+        type="text"
+        placeholder="Comment"
+      ></ion-input>
     </ion-item>
-    <br>
-    <ion-button (click)= "addComment()" expand="block" shape="round" >Add comment</ion-button>
-    <br>
-    
+    <br />
+    <ion-button (click)="addComment()" expand="block" shape="round"
+      >Add comment</ion-button
+    >
+    <br />
   </div>
-  
-  
-  
-  
-  
-  
+
   <div>
     <h4 class="ion-text-center">Rating section:</h4>
     <ion-item>
-      <ion-input [(ngModel)]="user" type="text" required="true" placeholder="Enter your username"></ion-input>
-    </ion-item>    
-    <br>
-    <ion-item>
-      <ion-input [(ngModel)]="id" type="text" required="true" placeholder="Enter the Id of the movie (located above)"></ion-input>
+      <ion-input
+        [(ngModel)]="user"
+        type="text"
+        required="true"
+        placeholder="Enter your username"
+      ></ion-input>
     </ion-item>
-    <br>
-  
+    <br />
+
     <ion-item>
-      <ion-input [(ngModel)]="rating" type="text" placeholder="Rating"></ion-input>
+      <ion-input
+        [(ngModel)]="rating"
+        type="text"
+        placeholder="Rating"
+      ></ion-input>
     </ion-item>
-    <br>
-    <ion-button (click)= "addRating()" expand="block" shape="round" >Add rating</ion-button>
-    <br>
-    
-  </div>  
-  
+    <br />
+    <ion-button (click)="addRating()" expand="block" shape="round"
+      >Add rating</ion-button
+    >
+    <br />
+  </div>
 </ion-content>
