@@ -28,9 +28,6 @@
               <p>General Rating: {{movie.rating}}</p>
               <p> Take a look to the trailer, 
                 <a href="{{movie.trailer}}" target="_blank">here</a>
-              </p>  
-              <p>Movie Id: {{movie.id}}</p>            
-              <br>
               <div>
                 <h2>Description:</h2>
                 <p>{{movie.description}}</p>
@@ -62,10 +59,7 @@
   <div>
     
     <h4 class="ion-text-center">Comment section:</h4>
-    <ion-item>
-      <ion-input [(ngModel)]="movie_id" type="text" required="true" placeholder="Enter the Id of the movie (located above)"></ion-input>
-    </ion-item>
-    <br>
+
     <ion-item>
       <ion-input [(ngModel)]="username" type="text" required="true" placeholder="Enter your username"></ion-input>
     </ion-item>    
@@ -89,11 +83,6 @@
     <ion-item>
       <ion-input [(ngModel)]="user" type="text" required="true" placeholder="Enter your username"></ion-input>
     </ion-item>    
-    <br>
-    <ion-item>
-      <ion-input [(ngModel)]="id" type="text" required="true" placeholder="Enter the Id of the movie (located above)"></ion-input>
-    </ion-item>
-    <br>
   
     <ion-item>
       <ion-input [(ngModel)]="rating" type="text" placeholder="Rating"></ion-input>

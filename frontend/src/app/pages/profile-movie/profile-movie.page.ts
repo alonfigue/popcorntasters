@@ -10,6 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 export class ProfileMoviePage implements OnInit {
   //creating property
   profileId: string;
+
+
+  movie_id: string;
   movie;
   comment = [];
   ratinga = [];
@@ -29,6 +32,7 @@ export class ProfileMoviePage implements OnInit {
         )
         .subscribe((res) => {
           this.movie = res.details;
+          this.movie_id = res.details.id;
           this.comment = res.comments;
           this.ratinga = res.ratings; // check this
           
@@ -36,7 +40,6 @@ export class ProfileMoviePage implements OnInit {
         });
       }
       
-      movie_id: string;
       description: string;
       username: string;
       
@@ -86,7 +89,7 @@ export class ProfileMoviePage implements OnInit {
     addRating() {
       
       const user = this.user;
-      const id = this.id;     
+      const movie_id = this.movie_id;     
       const rating = this.rating;
       
       fetch('https://popcorntasters-api.herokuapp.com/users/' + user + '/ratings', {
@@ -97,7 +100,7 @@ export class ProfileMoviePage implements OnInit {
       }),
       body: JSON.stringify({
         username: user,   
-        id: id,
+        id: movie_id,
         rating: rating
       }),
     })
