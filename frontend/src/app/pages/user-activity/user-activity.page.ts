@@ -9,51 +9,38 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-activity.page.scss'],
 })
 export class UserActivityPage implements OnInit {
-  
   comments = [];
-  
-  
+
+  username = localStorage.getItem('username');
   ratings = [];
-  
-  
-  constructor(private route: Router, private http: HttpClient, private activatedRoute: ActivatedRoute) { }
-  
+
+  constructor(
+    private route: Router,
+    private http: HttpClient,
+    private activatedRoute: ActivatedRoute
+  ) {}
+
   ngOnInit() {
-    /* this.http.get<any>('http://localhost:3000/users/' + rickyd + '/ratings')
-    .subscribe((res) => {
-      console.log(res);
-      this.ratings = res;
-      console.log(this.ratings);
-    });*/
-    
-    
-    
+    this.http
+      .get<any>(
+        'https://popcorntasters-api.herokuapp.com/users/' +
+          this.username +
+          '/comments'
+      )
+      .subscribe((res) => {
+        console.log(res);
+        this.comments = res;
+      });
+
+    this.http
+      .get<any>(
+        'https://popcorntasters-api.herokuapp.com/users/' +
+          this.username +
+          '/ratings'
+      )
+      .subscribe((res) => {
+        console.log(res);
+        this.ratings = res;
+      });
   }
-  
-  username: string;
-  
-  getActivity(){
-    
-    const username = this.username;
-    
-    console.log('this is working')
-    
-    this.http.get<any>('https://popcorntasters-api.herokuapp.com/users/'+this.username+'/comments')
-    .subscribe((res) => {
-      console.log(res);
-      this.comments = res;     
-    });
-    
-    
-    this.http.get<any>('https://popcorntasters-api.herokuapp.com/users/' + this.username +'/ratings')
-    .subscribe((res) => {
-      console.log(res);
-      this.ratings = res;
-      
-      
-      
-    });
-    
-  }
-  
 }

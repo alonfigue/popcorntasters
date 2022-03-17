@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-toolbar>
     <ion-title class="ion-text-center">User Profile</ion-title>
@@ -11,23 +10,17 @@
 
 <ion-content>
   <ion-card>
-    <ion-item>
-      <ion-input [(ngModel)]="username" type="text" required="true" placeholder="Enter your username and click the button *submit*"></ion-input>
-    </ion-item>
-    <ion-button class="ion-margin" (click)= "getData()">Submit</ion-button>
-    <br>
-    
     <div *ngIf="data">
-      <p>
-        Username: {{data.username}}
-        
-        Name: {{data.name}}
-      </p>    
+      <p>Username: {{data.username}}</p>
+      <p>Name: {{data.name}}</p>
     </div>
-    
-    <br>  
-    <ion-button routerLink="/profile-user-edit"  expand="block" shape="round">Edit profile</ion-button>
-    <ion-button routerLink="/profile-user-delete" expand="block" shape="round" >Delete account</ion-button>
+
+    <br />
+    <ion-button routerLink="/profile-user-edit" expand="block" shape="round"
+      >Edit profile</ion-button
+    >
+    <ion-button routerLink="/profile-user-delete" expand="block" shape="round"
+      >Delete account</ion-button
+    >
   </ion-card>
-  
-</ion-content> 
+</ion-content>

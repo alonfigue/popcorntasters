@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class ProfileUserPage implements OnInit {
   people = [];
   data;
+  username = localStorage.getItem('username');
 
   constructor(
     private route: Router,
@@ -19,28 +20,6 @@ export class ProfileUserPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    /* this.http.get<any>('http://localhost:3000/users/' + username);
-    .subscribe((res) => {
-      console.log(res);
-      this.ratings = res;
-      console.log(this.atingsr);
-    });*/
-    /* this.http.get<any>("http://localhost:3000/users/" + this.username) 
-    .subscribe((res) => {
-      this.person = res;
-      //console.log(this.movie)
-      
-      console.log(res)
-    });*/
-  }
-
-  username: string;
-
-  getData() {
-    const username = this.username;
-
-    console.log('this is working');
-
     this.http
       .get<any>(
         'https://popcorntasters-api.herokuapp.com/users/' + this.username

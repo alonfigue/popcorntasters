@@ -10,25 +10,21 @@
 </ion-header>
 
 <ion-content>
-  
-  <ion-card>
-    <ion-item>
-      <ion-input [(ngModel)]="username" type="text" required="true" placeholder="Enter your username and click the button *submit*"></ion-input>
-    </ion-item>
-    <ion-button class="ion-margin" (click)= "getActivity()">Submit</ion-button>
-    <br>
-  </ion-card>
-  
-  
+  <ion-card> </ion-card>
+
   <ion-list>
     <ion-item *ngFor="let com of comments">
-      <ion-label>User: {{com.username}} / Movie: {{com.movie_title}} / Description: {{com.description}}</ion-label>
+      <ion-label
+        >User: {{com.username}} / Movie: {{com.movie_title}} / Description:
+        {{com.description}}</ion-label
+      >
     </ion-item>
-  
+
     <ion-item *ngFor="let rat of ratings">
-      <ion-label>User: {{rat.username}} / Movie: {{rat.movie_title}} / Rating: {{rat.rating}}</ion-label>
+      <ion-label
+        >User: {{rat.username}} / Movie: {{rat.movie_title}} / Rating:
+        {{rat.rating}}</ion-label
+      >
     </ion-item>
   </ion-list>
-  
-  
 </ion-content>

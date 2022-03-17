@@ -14,10 +14,9 @@ export class ProfileMoviePage implements OnInit {
   movie_id: string;
   movie_title: string;
   description: string;
-  username: string;
+  username = localStorage.getItem('username');
 
   id: string;
-  user: string;
   rating: number;
 
   movie;
@@ -59,7 +58,6 @@ export class ProfileMoviePage implements OnInit {
   }
 
   addComment() {
-    const username = this.username;
     const description = this.description;
 
     fetch(
@@ -72,7 +70,7 @@ export class ProfileMoviePage implements OnInit {
           'Content-Type': 'application/json',
         }),
         body: JSON.stringify({
-          username: username,
+          username: this.username,
           movie_id: this.movie_id,
           description: description,
         }),
@@ -93,11 +91,12 @@ export class ProfileMoviePage implements OnInit {
   }
 
   addRating() {
-    const user = this.user;
     const rating = this.rating;
 
     fetch(
-      'https://popcorntasters-api.herokuapp.com/users/' + user + '/ratings',
+      'https://popcorntasters-api.herokuapp.com/users/' +
+        this.username +
+        '/ratings',
       {
         method: 'POST',
         headers: new Headers({
@@ -105,7 +104,7 @@ export class ProfileMoviePage implements OnInit {
           'Content-Type': 'application/json',
         }),
         body: JSON.stringify({
-          username: user,
+          username: this.username,
           id: this.movie_id,
           rating: rating,
         }),
@@ -126,11 +125,12 @@ export class ProfileMoviePage implements OnInit {
   }
 
   addFav() {
-    const user = this.username;
     const rating = this.rating;
 
     fetch(
-      'https://popcorntasters-api.herokuapp.com/users/' + user + '/movies',
+      'https://popcorntasters-api.herokuapp.com/users/' +
+        this.username +
+        '/movies',
       {
         method: 'PUT',
         headers: new Headers({
@@ -138,7 +138,7 @@ export class ProfileMoviePage implements OnInit {
           'Content-Type': 'application/json',
         }),
         body: JSON.stringify({
-          username: user,
+          username: this.username,
           id: this.movie_id,
           title: this.movie_title,
         }),

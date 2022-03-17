@@ -27,15 +27,6 @@ export class ProfileUserEditPage implements OnInit {
   password: string;
 
   editUser() {
-    /* this.profileId = this.activatedRoute.snapshot.paramMap.get("id");    
-    this.http.get<any>("http://localhost:3000/movies/details/" + this.profileId)
-    .subscribe((res) => {
-      this.movie = res.details;
-      this.comment = res.comments;
-      //console.log(this.movie)
-      
-      console.log(res)*/
-
     const usernameA = this.usernameA;
     const username = this.username;
     const name = this.name;
@@ -59,6 +50,7 @@ export class ProfileUserEditPage implements OnInit {
           window.location.replace(response.url);
         }
         console.log('Account edited...');
+        localStorage.setItem('username', this.username);
         this.router.navigate(['/menu/main']);
         return response.json();
       })
