@@ -64,7 +64,7 @@ export class ProfileMoviePage implements OnInit {
         body: JSON.stringify({
           username: username,
           movie_id: movie_id,
-          description: description
+          description: description,
         }),
       })
       .then((response) => {
@@ -80,8 +80,6 @@ export class ProfileMoviePage implements OnInit {
       })
       .catch((e) => console.log(e));    
       
-      
-      window.location.reload();
     }
     
     
@@ -92,14 +90,14 @@ export class ProfileMoviePage implements OnInit {
       const rating = this.rating;
       
       
-      fetch('https://popcorntasters-api.herokuapp.com/users/' + this.user + '/ratings', {
+      fetch('http://localhost:3000/users/' + this.user + '/ratings', {
       method: 'POST',
       headers: new Headers({
         // Encabezados
         'Content-Type': 'application/json',
       }),
       body: JSON.stringify({
-        user: user,   
+        username: user,   
         movie_id: id,
         rating: rating
       }),
@@ -109,7 +107,7 @@ export class ProfileMoviePage implements OnInit {
       if (response.redirected == true) {
         window.location.replace(response.url);
       }
-      console.log('New comment added...');
+      console.log('New rating added...');
       return response.json();
     })
     .then((r) => {
@@ -117,12 +115,6 @@ export class ProfileMoviePage implements OnInit {
     })
     .catch((e) => console.log(e));
     
-    
-    
-    
-    
-    
-    window.location.reload();
     
   }
   
