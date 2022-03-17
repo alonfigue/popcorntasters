@@ -22,6 +22,7 @@ export class ProfileMoviePage implements OnInit {
   movie;
   comment = [];
   ratinga = [];
+  general_rating: number;
 
   //instantiating
   constructor(
@@ -38,6 +39,14 @@ export class ProfileMoviePage implements OnInit {
       )
       .subscribe((res) => {
         this.movie_id = res.details.id;
+
+        var sum = 0;
+        res.ratings.forEach((element) => {
+          sum += element.rating;
+        });
+
+        this.general_rating = sum / res.ratings.length;
+        this.general_rating = Math.round(this.general_rating * 10) / 10;
 
         this.movie = res.details;
         this.comment = res.comments;

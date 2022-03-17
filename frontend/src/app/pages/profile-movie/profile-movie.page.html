@@ -46,7 +46,7 @@
               </ion-list>
               <br />
               <ion-list class="list">
-                <h2>Ratings:</h2>
+                <h2>General rating: {{general_rating}}</h2>
                 <ion-item *ngFor="let ra of ratinga">
                   <ion-label slot="start">User: {{ra.username}}</ion-label>
                   <p>{{ra.rating}}</p>
