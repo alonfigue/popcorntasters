@@ -89,8 +89,7 @@ export class ProfileMoviePage implements OnInit {
       const id = this.id;     
       const rating = this.rating;
       
-      
-      fetch('http://localhost:3000/users/' + this.user + '/ratings', {
+      fetch('https://popcorntasters-api.herokuapp.com/users/' + user + '/ratings', {
       method: 'POST',
       headers: new Headers({
         // Encabezados
@@ -98,7 +97,7 @@ export class ProfileMoviePage implements OnInit {
       }),
       body: JSON.stringify({
         username: user,   
-        movie_id: id,
+        id: id,
         rating: rating
       }),
     })
