@@ -30,7 +30,7 @@ export class ProfileMoviePage implements OnInit {
         .subscribe((res) => {
           this.movie = res.details;
           this.comment = res.comments;
-          this.ratinga = res.rating; // check this
+          this.ratinga = res.ratings; // check this
           
           console.log(res);
         });
@@ -39,16 +39,21 @@ export class ProfileMoviePage implements OnInit {
       movie_id: string;
       description: string;
       username: string;
+      
+      id: string;
+      user: string;
       rating: number;
       
       
       
-      addCommentRating() {
+      
+      addComment() {
         
         const username = this.username;
         const movie_id = this.movie_id;
-        const description = this.description;        
-        const rating = this.rating;
+        const description = this.description;   
+        
+        
         
         fetch('https://popcorntasters-api.herokuapp.com/movies/comment/' + this.movie_id, {
         method: 'POST',
@@ -59,7 +64,7 @@ export class ProfileMoviePage implements OnInit {
         body: JSON.stringify({
           username: username,
           movie_id: movie_id,
-          description: description
+          description: description,
         }),
       })
       .then((response) => {
@@ -67,25 +72,32 @@ export class ProfileMoviePage implements OnInit {
         if (response.redirected == true) {
           window.location.replace(response.url);
         }
-        console.log('New comment added...');
+        console.log('New comment created...');
         return response.json();
       })
       .then((r) => {
         console.log(r);
       })
-      .catch((e) => console.log(e));
+      .catch((e) => console.log(e));    
       
+    }
+    
+    
+    addRating() {
       
+      const user = this.user;
+      const id = this.id;     
+      const rating = this.rating;
       
-      fetch('https://popcorntasters-api.herokuapp.com/users/' +this.username+ '/ratings', {
+      fetch('https://popcorntasters-api.herokuapp.com/users/' + user + '/ratings', {
       method: 'POST',
       headers: new Headers({
         // Encabezados
         'Content-Type': 'application/json',
       }),
       body: JSON.stringify({
-        username: username,
-        movie_id: movie_id,
+        username: user,   
+        id: id,
         rating: rating
       }),
     })
@@ -95,7 +107,6 @@ export class ProfileMoviePage implements OnInit {
         window.location.replace(response.url);
       }
       console.log('New rating added...');
-      window.location.reload();
       return response.json();
     })
     .then((r) => {
@@ -104,9 +115,6 @@ export class ProfileMoviePage implements OnInit {
     .catch((e) => console.log(e));
     
     
-    
   }
-  
-  
   
 }

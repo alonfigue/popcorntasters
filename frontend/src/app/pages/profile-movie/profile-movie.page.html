@@ -37,17 +37,17 @@
               </div>
               
               <br>
-              <ion-list id="comment-list">
+              <ion-list class="list">
                 <h2>Comments:</h2>
-                <ion-item *ngFor = "let com of comment" [routerLink]="['/profile-movie/' + com.movie_id]">
+                <ion-item *ngFor = "let com of comment">
                   <ion-label slot="start">User: {{com.username}}</ion-label>
                   <p>({{com.description}}).</p>
                 </ion-item>                
               </ion-list>   
               <br>
-              <ion-list>
+              <ion-list class="list">
                 <h2>Ratings:</h2>
-                <ion-item *ngFor = "let ra of ratinga" [routerLink]="['/profile-movie/' + ra.movie_id]">
+                <ion-item *ngFor = "let ra of ratinga">
                   <ion-label slot="start">User: {{ra.username}}</ion-label>
                   <p>{{ra.rating}}</p>
                 </ion-item>                
@@ -61,7 +61,7 @@
   
   <div>
     
-    <h4 class="ion-text-center">Comment and Rating section:</h4>
+    <h4 class="ion-text-center">Comment section:</h4>
     <ion-item>
       <ion-input [(ngModel)]="movie_id" type="text" required="true" placeholder="Enter the Id of the movie (located above)"></ion-input>
     </ion-item>
@@ -74,11 +74,32 @@
       <ion-input [(ngModel)]="description" type="text" placeholder="Comment"></ion-input>
     </ion-item>
     <br>
+    <ion-button (click)= "addComment()" expand="block" shape="round" >Add comment</ion-button>
+    <br>
+    
+  </div>
+  
+  
+  
+  
+  
+  
+  <div>
+    <h4 class="ion-text-center">Rating section:</h4>
+    <ion-item>
+      <ion-input [(ngModel)]="user" type="text" required="true" placeholder="Enter your username"></ion-input>
+    </ion-item>    
+    <br>
+    <ion-item>
+      <ion-input [(ngModel)]="id" type="text" required="true" placeholder="Enter the Id of the movie (located above)"></ion-input>
+    </ion-item>
+    <br>
+  
     <ion-item>
       <ion-input [(ngModel)]="rating" type="text" placeholder="Rating"></ion-input>
     </ion-item>
     <br>
-    <ion-button (click)= "addCommentRating()" expand="block" shape="round" >Add comment and rating</ion-button>
+    <ion-button (click)= "addRating()" expand="block" shape="round" >Add rating</ion-button>
     <br>
     
   </div>  

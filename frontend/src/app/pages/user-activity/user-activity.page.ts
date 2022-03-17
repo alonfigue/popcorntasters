@@ -38,14 +38,14 @@ export class UserActivityPage implements OnInit {
     
     console.log('this is working')
     
-    this.http.get<any>('http://localhost:3000/users/'+this.username+'/comments')
+    this.http.get<any>('https://popcorntasters-api.herokuapp.com/users/'+this.username+'/comments')
     .subscribe((res) => {
       console.log(res);
       this.comments = res;     
     });
     
     
-    this.http.get<any>('http://localhost:3000/users/' + this.username +'/ratings')
+    this.http.get<any>('https://popcorntasters-api.herokuapp.com/users/' + this.username +'/ratings')
     .subscribe((res) => {
       console.log(res);
       this.ratings = res;
