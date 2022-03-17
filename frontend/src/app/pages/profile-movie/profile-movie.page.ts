@@ -28,4 +28,10 @@ export class ProfileMoviePage implements OnInit {
       console.log(res)
     });
   }  
+
+
+  addCommentRating(){
+    
+  }
+
 }

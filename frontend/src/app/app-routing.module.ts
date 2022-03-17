@@ -51,7 +51,8 @@ const routes: Routes = [
   {
     path: 'profile-user-delete',
     loadChildren: () => import('./pages/profile-user-delete/profile-user-delete.module').then( m => m.ProfileUserDeletePageModule)
-  },
+  }
+
   
   
   

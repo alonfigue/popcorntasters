@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-activity',
@@ -8,19 +10,49 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserActivityPage implements OnInit {
   
-  //ratings = [];
+  comments = [];
   
-  constructor(private http: HttpClient) { }
+  
+  ratings = [];
+  
+  
+  constructor(private route: Router, private http: HttpClient, private activatedRoute: ActivatedRoute) { }
   
   ngOnInit() {
-   /* this.http.get<any>('http://localhost:3000/users/' + rickyd + '/ratings')
+    /* this.http.get<any>('http://localhost:3000/users/' + rickyd + '/ratings')
     .subscribe((res) => {
       console.log(res);
       this.ratings = res;
       console.log(this.ratings);
     });*/
-       
     
+    
+    
+  }
+  
+  username: string;
+  
+  getActivity(){
+    
+    const username = this.username;
+    
+    console.log('this is working')
+    
+    this.http.get<any>('http://localhost:3000/users/'+this.username+'/comments')
+    .subscribe((res) => {
+      console.log(res);
+      this.comments = res;     
+    });
+    
+    
+    this.http.get<any>('http://localhost:3000/users/' + this.username +'/ratings')
+    .subscribe((res) => {
+      console.log(res);
+      this.ratings = res;
+      
+      
+      
+    });
     
   }
   

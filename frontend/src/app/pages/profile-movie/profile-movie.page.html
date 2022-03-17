@@ -23,12 +23,13 @@
               <br>
               <img src="{{movie.image}}" alt="">
               <br>
-
+              
               <p>Genre: {{movie.genre}}</p>
               <p>General Rating: {{movie.rating}}</p>
               <p> Take a look to the trailer, 
                 <a href="{{movie.trailer}}" target="_blank">here</a>
-              </p>              
+              </p>  
+              <p>Movie Id: {{movie.id}}</p>            
               <br>
               <div>
                 <h2>Description:</h2>
@@ -50,5 +51,28 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  
+  <div>
+    <h4 class="ion-text-center">Add comment and rating to the movie:</h4>
+    <ion-item>
+      <ion-input [(ngModel)]="movie_id" type="text" required="true" placeholder="Enter the Id of the movie (located above)"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input [(ngModel)]="username" type="text" required="true" placeholder="Enter your username"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input [(ngModel)]="description" type="text" required placeholder="Add a comment to the movie"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input [(ngModel)]="rating" type="text" required placeholder="Add a rating to the movie"></ion-input>
+    </ion-item>
+    <br>
+    <ion-button (click)= "addCommentRating()" expand="block" shape="round" >Add</ion-button>
+    <br>
+  </div>
+  
   
 </ion-content>
