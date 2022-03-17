@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router} from '@angular/router';
-import { HttpClient } from "@angular/common/http";
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-
 
 @Component({
   selector: 'app-profile-user-edit',
@@ -10,26 +9,25 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./profile-user-edit.page.scss'],
 })
 export class ProfileUserEditPage implements OnInit {
-
- /* profileId: string;
+  /* profileId: string;
   movie;
   comment= [];
   */
-  constructor(private router: Router, private http: HttpClient, private activatedRoute: ActivatedRoute) { }
-  
-  ngOnInit() {
-  }
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
-  usernameA:string;
+  ngOnInit() {}
+
+  usernameA: string;
   username: string;
-  name:string;
-  password:string;
+  name: string;
+  password: string;
 
-  
-   
-  editUser(){
-    
-   /* this.profileId = this.activatedRoute.snapshot.paramMap.get("id");    
+  editUser() {
+    /* this.profileId = this.activatedRoute.snapshot.paramMap.get("id");    
     this.http.get<any>("http://localhost:3000/movies/details/" + this.profileId)
     .subscribe((res) => {
       this.movie = res.details;
@@ -37,48 +35,40 @@ export class ProfileUserEditPage implements OnInit {
       //console.log(this.movie)
       
       console.log(res)*/
-      
-     
-      const usernameA = this.usernameA;
-      const username = this.username;
-      const name = this.name;
-      const password = this.password;
-      
-      
-      fetch('http://localhost:3000/users/' + this.usernameA,{
+
+    const usernameA = this.usernameA;
+    const username = this.username;
+    const name = this.name;
+    const password = this.password;
+
+    fetch('https://popcorntasters-api.herokuapp.com/users/' + this.usernameA, {
       method: 'PUT',
       headers: new Headers({
         // Encabezados
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       }),
-      body: JSON.stringify(
-        {  
-          "username": username,
-          "name": name,
-          "password": password
-        })
-        
-      }).then(response=>{
+      body: JSON.stringify({
+        username: username,
+        name: name,
+        password: password,
+      }),
+    })
+      .then((response) => {
         console.log(response);
-        if (response.redirected == true)
-        {
-          window.location.replace(response.url)
-        }           
+        if (response.redirected == true) {
+          window.location.replace(response.url);
+        }
         console.log('Account edited...');
         this.router.navigate(['/menu/main']);
-        return response.json()
-        
-        
-      }).then(r =>{
+        return response.json();
+      })
+      .then((r) => {
         console.log(r);
-      }).catch(e => console.log(e))
-      
-      //var p = document.createElement("p");
-      //cont1.appendChild(p);
-      //p.innerHTML = "Succesfully updated";
-      
-      
-    } 
-    
+      })
+      .catch((e) => console.log(e));
+
+    //var p = document.createElement("p");
+    //cont1.appendChild(p);
+    //p.innerHTML = "Succesfully updated";
   }
-  
+}

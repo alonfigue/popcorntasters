@@ -8,24 +8,30 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./profile-movie.page.scss'],
 })
 export class ProfileMoviePage implements OnInit {
-  
   //creating property
   profileId: string;
   movie;
-  comment= [];
-  
+  comment = [];
+
   //instantiating
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute) { }
-  
+  constructor(
+    private http: HttpClient,
+    private activatedRoute: ActivatedRoute
+  ) {}
+
   ngOnInit() {
-    this.profileId = this.activatedRoute.snapshot.paramMap.get("id");    
-    this.http.get<any>("http://localhost:3000/movies/details/" + this.profileId)
-    .subscribe((res) => {
-      this.movie = res.details;
-      this.comment = res.comments;
-      //console.log(this.movie)
-      
-      console.log(res)
-    });
-  }  
+    this.profileId = this.activatedRoute.snapshot.paramMap.get('id');
+    this.http
+      .get<any>(
+        'https://popcorntasters-api.herokuapp.com/movies/details/' +
+          this.profileId
+      )
+      .subscribe((res) => {
+        this.movie = res.details;
+        this.comment = res.comments;
+        //console.log(this.movie)
+
+        console.log(res);
+      });
+  }
 }
