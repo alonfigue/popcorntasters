@@ -9,12 +9,7 @@ import { MainPageRoutingModule } from './main-routing.module';
 import { MainPage } from './main.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    MainPageRoutingModule
-  ],
-  declarations: [MainPage]
+  imports: [CommonModule, FormsModule, IonicModule, MainPageRoutingModule],
+  declarations: [MainPage],
 })
 export class MainPageModule {}
