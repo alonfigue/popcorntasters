@@ -42,9 +42,16 @@
                 <ion-item *ngFor = "let com of comment" [routerLink]="['/profile-movie/' + com.movie_id]">
                   <ion-label slot="start">User: {{com.username}}</ion-label>
                   <p>({{com.description}}).</p>
-                </ion-item>
-                
+                </ion-item>                
               </ion-list>   
+              <br>
+              <ion-list>
+                <h2>Ratings:</h2>
+                <ion-item *ngFor = "let ra of ratinga" [routerLink]="['/profile-movie/' + ra.movie_id]">
+                  <ion-label slot="start">User: {{ra.username}}</ion-label>
+                  <p>{{ra.rating}}</p>
+                </ion-item>                
+              </ion-list> 
             </ion-card-content>
           </ion-card>
         </div>
@@ -53,26 +60,27 @@
   </ion-grid>
   
   <div>
-    <h4 class="ion-text-center">Add comment and rating to the movie:</h4>
+    
+    <h4 class="ion-text-center">Comment and Rating section:</h4>
     <ion-item>
       <ion-input [(ngModel)]="movie_id" type="text" required="true" placeholder="Enter the Id of the movie (located above)"></ion-input>
     </ion-item>
     <br>
     <ion-item>
       <ion-input [(ngModel)]="username" type="text" required="true" placeholder="Enter your username"></ion-input>
+    </ion-item>    
+    <br>
+    <ion-item>
+      <ion-input [(ngModel)]="description" type="text" placeholder="Comment"></ion-input>
     </ion-item>
     <br>
     <ion-item>
-      <ion-input [(ngModel)]="description" type="text" required placeholder="Add a comment to the movie"></ion-input>
+      <ion-input [(ngModel)]="rating" type="text" placeholder="Rating"></ion-input>
     </ion-item>
     <br>
-    <ion-item>
-      <ion-input [(ngModel)]="rating" type="text" required placeholder="Add a rating to the movie"></ion-input>
-    </ion-item>
+    <ion-button (click)= "addCommentRating()" expand="block" shape="round" >Add comment and rating</ion-button>
     <br>
-    <ion-button (click)= "addCommentRating()" expand="block" shape="round" >Add</ion-button>
-    <br>
-  </div>
-  
+    
+  </div>  
   
 </ion-content>
