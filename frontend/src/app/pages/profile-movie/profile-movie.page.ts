@@ -12,6 +12,7 @@ export class ProfileMoviePage implements OnInit {
   profileId: string;
 
   movie_id: string;
+  movie_title: string;
   description: string;
   username: string;
 
@@ -39,6 +40,7 @@ export class ProfileMoviePage implements OnInit {
       )
       .subscribe((res) => {
         this.movie_id = res.details.id;
+        this.movie_title = res.details.title;
 
         var sum = 0;
         res.ratings.forEach((element) => {
@@ -115,6 +117,35 @@ export class ProfileMoviePage implements OnInit {
           window.location.replace(response.url);
         }
         console.log('New rating added...');
+        return response.json();
+      })
+      .then((r) => {
+        console.log(r);
+      })
+      .catch((e) => console.log(e));
+  }
+
+  addFav() {
+    const user = this.username;
+    const rating = this.rating;
+
+    fetch(
+      'https://popcorntasters-api.herokuapp.com/users/' + user + '/movies',
+      {
+        method: 'PUT',
+        headers: new Headers({
+          // Encabezados
+          'Content-Type': 'application/json',
+        }),
+        body: JSON.stringify({
+          username: user,
+          id: this.movie_id,
+          title: this.movie_title,
+        }),
+      }
+    )
+      .then((response) => {
+        console.log('Movie added to favorites...');
         return response.json();
       })
       .then((r) => {
