@@ -18,8 +18,6 @@ export class LoginPage implements OnInit {
     const username = this.username;
     const password = this.password;
 
-    console.log(username, password);
-
     fetch('https://popcorntasters-api.herokuapp.com/auth/login', {
       method: 'POST',
       headers: new Headers({
@@ -33,11 +31,6 @@ export class LoginPage implements OnInit {
     })
       .then((response) => {
         if (response.ok) {
-          console.log('The user exists and the data matches...');
-          console.log(response);
-          this.router.navigate(['/menu/main']);
-          //flag
-          localStorage.setItem('loggedin', 'true');
           return response.json();
         } else {
           throw 'The user does not exists or the data does not matches...';
@@ -45,6 +38,10 @@ export class LoginPage implements OnInit {
       })
       .then((r) => {
         console.log(r);
+        localStorage.setItem('loggedin', 'true');
+        localStorage.setItem('username', this.username);
+
+        this.router.navigate(['/menu/main']);
       })
       .catch((e) => console.log(e));
   }
