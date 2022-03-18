@@ -12,12 +12,12 @@ Desarrolladores: Figueroa Alonso, C.I. V-28536894 y Muchacho Ricardo, C.I. V-278
 ## **Descripción del proyecto:**
 
 
-### *Funciones*:
-#### General
+### *1. Funciones*:
+#### 1.1. General
 - Registro de usuarios.
 - Inicio de sesión y cierre de sesión.
  
-#### Visualización
+#### 1.2. Visualización
 - Películas más populares del momento situadas en el dashboard.
 - La descripción de la película estará dentro del perfil de la misma:
     - Sus imágenes.
@@ -25,7 +25,7 @@ Desarrolladores: Figueroa Alonso, C.I. V-28536894 y Muchacho Ricardo, C.I. V-278
     - Ratings más valiosos (ó los últimos ratings).
     - Comentarios.			
                     
-#### Capacidades de un usuario de la aplicación
+#### 1.3. Capacidades de un usuario de la aplicación
  - Dar rating a cualquier película (afectando el rating general de la misma).
  - Comentar sobre una película.
  - Votar si una crítica ajena le resulta útil o no (sin afectar el rating general de la película).
@@ -35,7 +35,7 @@ Desarrolladores: Figueroa Alonso, C.I. V-28536894 y Muchacho Ricardo, C.I. V-278
  - Agregar un listado con los últimos ratings del usuario y comentarios añadidos.
 
 
-### *Herramientas ulitizadas para su realización*:
+### *2. Herramientas ulitizadas para su realización*:
  - IDE (Entorno de Desarrollo Integrado): *Visual Studio Code*.
  - DVCS (Control de Versiones Distribuido): *Git y la plataforma de GitHub*.
  - Frontend: *Angular y Ionic*.
@@ -45,7 +45,7 @@ Desarrolladores: Figueroa Alonso, C.I. V-28536894 y Muchacho Ricardo, C.I. V-278
  - PaaS (Plataforma como servicio): *Heroku*.
 
 
-### *Instrucciones para usar la aplicación*:
+### *3. Instrucciones para usar la aplicación*:
  El servidor se encuentra en la nube, por lo que descargando el Android Package (.apk) es suficiente para hacer uso de la aplicación en cualquier dispositivo móvil.
 
  En caso de preferir correr la app localmente, es recomendable hacer un clon del repositorio presente, usando Git, introduciendo en Git Bash lo siguiente: 
