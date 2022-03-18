@@ -49,7 +49,7 @@ Desarrolladores: Figueroa Alonso, C.I. V-28536894 y Muchacho Ricardo, C.I. V-278
  El servidor se encuentra en la nube, por lo que descargando el Android Package (.apk) es suficiente para hacer uso de la aplicación en cualquier dispositivo móvil.
 
  En caso de preferir correr la app localmente, es recomendable hacer un clon del repositorio presente, usando Git, introduciendo en Git Bash lo siguiente: 
- "$ git clone https://github.com/alonfigue/popcorntasters.git"
+ "git clone https://github.com/alonfigue/popcorntasters.git"
 
  1. Desde la consola, situarse en la carpeta "frontend", y usar el comando "npm i" para instalar las dependencias (pero antes, asegurarse de tener instalado Node.js).
  2. Luego, desde la misma carpeta, usar el comando "npm install -g @ionic/cli" para instalar la Interfaz de línea de comandos (CLI) de Ionic globalmente.
