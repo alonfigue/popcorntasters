@@ -53,4 +53,4 @@ Desarrolladores: Figueroa Alonso, C.I. V-28536894 y Muchacho Ricardo, C.I. V-278
 
  1. Desde la consola, situarse en la carpeta "frontend", y usar el comando "npm i" para instalar las dependencias (pero antes, asegurarse de tener instalado Node.js).
  2. Luego, desde la misma carpeta, usar el comando "npm install -g @ionic/cli" para instalar la Interfaz de línea de comandos (CLI) de Ionic globalmente.
- 3. Por último, para correr la aplicación, en la misma carpeta desde la consola, insertar "ionic serve".
+ 3. Por último, para correr la aplicación, en la misma carpeta, desde la consola, insertar "ionic serve".
