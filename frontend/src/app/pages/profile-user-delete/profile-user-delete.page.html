@@ -8,25 +8,29 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  
-  <div id="header">    
+  <div id="header">
     <h1>Delete your Account</h1>
     <img src="assets/logos/user-delete.png" />
     <h2>Continue with the verification:</h2>
   </div>
-  
+
   <ion-card class="ion-margin">
-    <br>
+    <br />
     <ion-item>
-      <ion-input [(ngModel)]="username" type="text" required="true" placeholder="Enter your actual username"></ion-input>
+      <ion-input
+        [(ngModel)]="password"
+        type="password"
+        placeholder="Enter your password"
+      ></ion-input>
     </ion-item>
-    <br>
-    <ion-item>
-      <ion-input [(ngModel)]="password" type="password" placeholder="Enter your password"></ion-input>
-    </ion-item>
-    <br>
-    
+    <br />
   </ion-card>
-  <ion-button color="danger" expand="block" shape="round" class="ion-margin" (click)= "deleteUser()">Delete</ion-button>
-  
+  <ion-button
+    color="danger"
+    expand="block"
+    shape="round"
+    class="ion-margin"
+    (click)="deleteUser()"
+    >Delete</ion-button
+  >
 </ion-content>

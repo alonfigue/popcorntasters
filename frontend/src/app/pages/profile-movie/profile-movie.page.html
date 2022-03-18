@@ -22,26 +22,30 @@
               <br />
               <img src="{{movie.image}}" alt="" />
               <br />
-              
+
               <p>Genre: {{movie.genre}}</p>
               <p>General Rating: {{movie.rating}}</p>
               <p>
                 Take a look to the trailer,
                 <a href="{{movie.trailer}}" target="_blank">here</a>
               </p>
-              
+
               <br />
               <div>
                 <h2>Description:</h2>
                 <p>{{movie.description}}</p>
-                <br>
+                <br />
               </div>
               <div>
-                <ion-button color="warning" (click)="addFav()" expand="block" shape="round"
-                >☆ Add to favorites</ion-button
+                <ion-button
+                  color="warning"
+                  (click)="addFav()"
+                  expand="block"
+                  shape="round"
+                  >☆ Add to favorites</ion-button
                 >
               </div>
-              
+
               <br />
               <ion-list class="list">
                 <h2>Comments:</h2>
@@ -64,39 +68,41 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  
+
   <ion-grid>
     <ion-row>
       <ion-col sizeMd="4" offsetMd="4">
-        
         <div>
           <h4 class="ion-text-center">Comment section:</h4>
           <ion-item>
             <ion-input
-            [(ngModel)]="description"
-            type="text"
-            placeholder="Comment"
+              [(ngModel)]="description"
+              type="text"
+              placeholder="Comment"
             ></ion-input>
           </ion-item>
           <br />
           <ion-button (click)="addComment()" expand="block" shape="round"
-          >Add comment</ion-button
+            >Add comment</ion-button
           >
           <br />
         </div>
-        
+
         <div>
           <h4 class="ion-text-center">Rating section:</h4>
           <ion-item>
             <ion-input
-            [(ngModel)]="rating"
-            type="text"
-            placeholder="Rating"
+              [(ngModel)]="rating"
+              type="number"
+              placeholder="Rating from 1-10"
+              numbers-only
+              max="10"
+              min="0"
             ></ion-input>
           </ion-item>
           <br />
           <ion-button (click)="addRating()" expand="block" shape="round"
-          >Add rating</ion-button
+            >Add rating</ion-button
           >
           <br />
         </div>
