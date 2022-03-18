@@ -1,16 +1,31 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>user-top</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+      <ion-button routerLink="/menu/main">Return to Main</ion-button>
+    </ion-buttons>
+    
+    <ion-title class="ion-text-center">Favorite Movies</ion-title>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-  <ion-list>
-    <ion-item
-    *ngFor="let favS of favs"
-    [routerLink]="['/profile-movie/' + favS.id]"
-    >
-    <ion-label> {{favS.title}} </ion-label>
-  </ion-item>
-</ion-list>
+  
+  <ion-card id="Favs">
+    <img src="assets/logos/favs.png" />
+    <h1>List of Favorites:</h1>
+    
+    <ion-list>
+      <ion-item
+      *ngFor="let favS of favs"
+      [routerLink]="['/profile-movie/' + favS.id]"
+      >
+      <ion-label> ☆ {{favS.title}} </ion-label>
+    </ion-item>
+  </ion-list>
+  
+</ion-card>
+
+
 </ion-content>
