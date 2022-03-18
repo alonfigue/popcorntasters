@@ -29,15 +29,16 @@
                 Take a look to the trailer,
                 <a href="{{movie.trailer}}" target="_blank">here</a>
               </p>
-              <p>Movie Id: {{movie.id}}</p>
+              
               <br />
               <div>
                 <h2>Description:</h2>
                 <p>{{movie.description}}</p>
+                <br>
               </div>
               <div>
-                <ion-button (click)="addFav()" expand="block" shape="round"
-                >Add to favorites</ion-button
+                <ion-button color="warning" (click)="addFav()" expand="block" shape="round"
+                >☆ Add to favorites</ion-button
                 >
               </div>
               
@@ -64,35 +65,42 @@
     </ion-row>
   </ion-grid>
   
-  <div>
-    <h4 class="ion-text-center">Comment section:</h4>
-    <ion-item>
-      <ion-input
-      [(ngModel)]="description"
-      type="text"
-      placeholder="Comment"
-      ></ion-input>
-    </ion-item>
-    <br />
-    <ion-button (click)="addComment()" expand="block" shape="round"
-    >Add comment</ion-button
-    >
-    <br />
-  </div>
-  
-  <div>
-    <h4 class="ion-text-center">Rating section:</h4>
-    <ion-item>
-      <ion-input
-      [(ngModel)]="rating"
-      type="text"
-      placeholder="Rating"
-      ></ion-input>
-    </ion-item>
-    <br />
-    <ion-button (click)="addRating()" expand="block" shape="round"
-    >Add rating</ion-button
-    >
-    <br />
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeMd="4" offsetMd="4">
+        
+        <div>
+          <h4 class="ion-text-center">Comment section:</h4>
+          <ion-item>
+            <ion-input
+            [(ngModel)]="description"
+            type="text"
+            placeholder="Comment"
+            ></ion-input>
+          </ion-item>
+          <br />
+          <ion-button (click)="addComment()" expand="block" shape="round"
+          >Add comment</ion-button
+          >
+          <br />
+        </div>
+        
+        <div>
+          <h4 class="ion-text-center">Rating section:</h4>
+          <ion-item>
+            <ion-input
+            [(ngModel)]="rating"
+            type="text"
+            placeholder="Rating"
+            ></ion-input>
+          </ion-item>
+          <br />
+          <ion-button (click)="addRating()" expand="block" shape="round"
+          >Add rating</ion-button
+          >
+          <br />
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
