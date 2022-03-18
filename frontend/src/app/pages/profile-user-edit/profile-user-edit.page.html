@@ -9,6 +9,12 @@
 </ion-header>
 <ion-content>
   
+  <div id="header">    
+    <h1>Edit your Profile</h1>
+    <img src="assets/logos/user-edit.png" />
+    <h2>Continue with the verification:</h2>
+  </div>
+  
   <ion-card class="ion-margin">
     <br>
     <ion-item>
@@ -28,44 +34,9 @@
     </ion-item>
     <br>
     
+    <div id="edit">
+      <ion-button expand="block" shape="round" (click)= "editUser()">Finish Edit</ion-button>
+    </div>
   </ion-card>
-  <ion-button class="ion-margin" (click)= "editUser()">Finish Edit</ion-button>
   
 </ion-content>
-
-
-
-<!--<ion-header>
-  <ion-toolbar>
-    <ion-title>Edit User Profile</ion-title>
-    <ion-buttons slot="start">
-      <ion-icon name="chevron-back-outline"></ion-icon>
-      <ion-button routerLink="/profile-user">Go Back</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  
-  <div id="header">    
-    <h1>Edit your Profile</h1>
-    <h2>Enter your new data:</h2>
-  </div>
-  
-  
-  <ion-item>
-    <ion-input [(ngModel)]="username" type="text" placeholder="Username"></ion-input>
-  </ion-item>
-  <br>    
-  <ion-item>
-    <ion-input [(ngModel)]="name" type="text" required="true" placeholder="Name"></ion-input>
-  </ion-item>
-  <br>
-  <ion-item>
-    <ion-input [(ngModel)]="password" type="password" placeholder="Password"></ion-input>
-  </ion-item>
-  
-  <ion-button  expand="block" shape="round" (click)= "editUser()">Finish Edit</ion-button>
-  
-  
-</ion-content>-->
