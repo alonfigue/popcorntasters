@@ -7,10 +7,10 @@
 <ion-content>
   <ion-list>
     <ion-item
-      *ngFor="let favS of favs"
-      [routerLink]="['/profile-movie/' + favS.id]"
+    *ngFor="let favS of favs"
+    [routerLink]="['/profile-movie/' + favS.id]"
     >
-      <ion-label> {{favS.title}} </ion-label>
-    </ion-item>
-  </ion-list>
+    <ion-label> {{favS.title}} </ion-label>
+  </ion-item>
+</ion-list>
 </ion-content>

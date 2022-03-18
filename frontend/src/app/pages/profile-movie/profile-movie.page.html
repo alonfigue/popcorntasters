@@ -22,7 +22,7 @@
               <br />
               <img src="{{movie.image}}" alt="" />
               <br />
-
+              
               <p>Genre: {{movie.genre}}</p>
               <p>General Rating: {{movie.rating}}</p>
               <p>
@@ -37,10 +37,10 @@
               </div>
               <div>
                 <ion-button (click)="addFav()" expand="block" shape="round"
-                  >Add to favorites</ion-button
+                >Add to favorites</ion-button
                 >
               </div>
-
+              
               <br />
               <ion-list class="list">
                 <h2>Comments:</h2>
@@ -63,35 +63,35 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
+  
   <div>
     <h4 class="ion-text-center">Comment section:</h4>
     <ion-item>
       <ion-input
-        [(ngModel)]="description"
-        type="text"
-        placeholder="Comment"
+      [(ngModel)]="description"
+      type="text"
+      placeholder="Comment"
       ></ion-input>
     </ion-item>
     <br />
     <ion-button (click)="addComment()" expand="block" shape="round"
-      >Add comment</ion-button
+    >Add comment</ion-button
     >
     <br />
   </div>
-
+  
   <div>
     <h4 class="ion-text-center">Rating section:</h4>
     <ion-item>
       <ion-input
-        [(ngModel)]="rating"
-        type="text"
-        placeholder="Rating"
+      [(ngModel)]="rating"
+      type="text"
+      placeholder="Rating"
       ></ion-input>
     </ion-item>
     <br />
     <ion-button (click)="addRating()" expand="block" shape="round"
-      >Add rating</ion-button
+    >Add rating</ion-button
     >
     <br />
   </div>

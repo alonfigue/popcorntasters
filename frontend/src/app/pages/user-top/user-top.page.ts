@@ -9,21 +9,22 @@ import { HttpClient } from '@angular/common/http';
 export class UserTopPage implements OnInit {
   favs = [];
   username = localStorage.getItem('username');
-
+  
   constructor(private http: HttpClient) {}
-
+  
   ngOnInit() {
     console.log(this.username);
-
+    
     this.http
-      .get<any>(
-        'https://popcorntasters-api.herokuapp.com/users/' +
-          this.username +
-          '/movies'
+    .get<any>(
+      'https://popcorntasters-api.herokuapp.com/users/' +
+      this.username +
+      '/movies'
       )
       .subscribe((res) => {
         console.log(res);
         this.favs = res;
       });
+    }
   }
-}
+  

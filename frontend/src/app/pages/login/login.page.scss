@@ -1,8 +1,8 @@
 ion-toolbar {
     --background: #cf3c4f;
-
-
-   
+    
+    
+    
 }
 
 ion-content {
@@ -65,17 +65,21 @@ ion-content {
         --box-shadow: none;
         
         
-        p {
-            
-            align-items: center;
-        }
+        
         
     }
     
     
     #register {
-        padding-right: 70px;
+        padding-right: 160px;
         padding-bottom: 50px;
-        padding-left: 70px;
+        padding-left: 120px;
+        
+        ion-item {
+            
+            p {
+                text-align: center;
+            }
+        }
     }
 }

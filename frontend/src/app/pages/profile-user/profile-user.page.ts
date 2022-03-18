@@ -9,25 +9,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile-user.page.scss'],
 })
 export class ProfileUserPage implements OnInit {
+  
   people = [];
   data;
   username = localStorage.getItem('username');
-
+  
   constructor(
     private route: Router,
     private http: HttpClient,
     private activatedRoute: ActivatedRoute
-  ) {}
-
-  ngOnInit() {
-    this.http
+    ) {}
+    
+    ngOnInit() {
+      this.http
       .get<any>(
         'https://popcorntasters-api.herokuapp.com/users/' + this.username
-      )
-      .subscribe((res) => {
-        console.log(res);
-        this.data = res;
-        this.people = res.people;
-      });
-  }
-}
+        )
+        .subscribe((res) => {
+          console.log(res);
+          this.data = res;
+          this.people = res.people;
+        });
+      }
+    }
+    

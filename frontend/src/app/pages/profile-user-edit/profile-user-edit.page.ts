@@ -9,30 +9,27 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./profile-user-edit.page.scss'],
 })
 export class ProfileUserEditPage implements OnInit {
-  /* profileId: string;
-  movie;
-  comment= [];
-  */
+
   constructor(
     private router: Router,
     private http: HttpClient,
     private activatedRoute: ActivatedRoute
-  ) {}
-
-  ngOnInit() {}
-
-  usernameA: string;
-  username: string;
-  name: string;
-  password: string;
-
-  editUser() {
-    const usernameA = this.usernameA;
-    const username = this.username;
-    const name = this.name;
-    const password = this.password;
-
-    fetch('https://popcorntasters-api.herokuapp.com/users/' + this.usernameA, {
+    ) {}
+    
+    ngOnInit() {}
+    
+    usernameA: string;
+    username: string;
+    name: string;
+    password: string;
+    
+    editUser() {
+      const usernameA = this.usernameA;
+      const username = this.username;
+      const name = this.name;
+      const password = this.password;
+      
+      fetch('https://popcorntasters-api.herokuapp.com/users/' + this.usernameA, {
       method: 'PUT',
       headers: new Headers({
         // Encabezados
@@ -44,23 +41,20 @@ export class ProfileUserEditPage implements OnInit {
         password: password,
       }),
     })
-      .then((response) => {
-        console.log(response);
-        if (response.redirected == true) {
-          window.location.replace(response.url);
-        }
-        console.log('Account edited...');
-        localStorage.setItem('username', this.username);
-        this.router.navigate(['/menu/main']);
-        return response.json();
-      })
-      .then((r) => {
-        console.log(r);
-      })
-      .catch((e) => console.log(e));
-
-    //var p = document.createElement("p");
-    //cont1.appendChild(p);
-    //p.innerHTML = "Succesfully updated";
+    .then((response) => {
+      console.log(response);
+      if (response.redirected == true) {
+        window.location.replace(response.url);
+      }
+      console.log('Account edited...');
+      localStorage.setItem('username', this.username);
+      this.router.navigate(['/menu/main']);
+      return response.json();
+    })
+    .then((r) => {
+      console.log(r);
+    })
+    .catch((e) => console.log(e));
   }
+  
 }

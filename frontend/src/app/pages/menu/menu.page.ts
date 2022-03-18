@@ -21,17 +21,6 @@ export class MenuPage implements OnInit {
     },
     
     //index 1... so on and so forth
-  /*
-    {
-      title: 'User Activity',
-      url: '/user-activity',
-      icon: 'book'
-    },
-    {
-      title: 'Top Movies (User)',
-      url: '/user-top',
-      icon: 'star'
-    },*/
     {
       title: 'Search a Movie',
       url: '/search-movie',
@@ -46,8 +35,7 @@ export class MenuPage implements OnInit {
   }
   
   changeSelectedIndex(i){
-    this.selectedIndex = i;
-    
+    this.selectedIndex = i;    
   }
   
 
@@ -66,8 +54,7 @@ export class MenuPage implements OnInit {
       buttons: [
         {
           text: 'No',
-          handler: () => {
-            
+          handler: () => {            
           }
         }, {
           text: 'Yes',
@@ -77,8 +64,7 @@ export class MenuPage implements OnInit {
           }
         }
       ]
-    });
-    
+    });    
     await alert.present();
   }
   

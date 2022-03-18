@@ -9,38 +9,39 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-activity.page.scss'],
 })
 export class UserActivityPage implements OnInit {
-  comments = [];
 
+  comments = [];
   username = localStorage.getItem('username');
   ratings = [];
-
+  
   constructor(
     private route: Router,
     private http: HttpClient,
     private activatedRoute: ActivatedRoute
-  ) {}
-
-  ngOnInit() {
-    this.http
+    ) {}
+    
+    ngOnInit() {
+      this.http
       .get<any>(
         'https://popcorntasters-api.herokuapp.com/users/' +
-          this.username +
-          '/comments'
-      )
-      .subscribe((res) => {
-        console.log(res);
-        this.comments = res;
-      });
-
-    this.http
-      .get<any>(
-        'https://popcorntasters-api.herokuapp.com/users/' +
+        this.username +
+        '/comments'
+        )
+        .subscribe((res) => {
+          console.log(res);
+          this.comments = res;
+        });
+        
+        this.http
+        .get<any>(
+          'https://popcorntasters-api.herokuapp.com/users/' +
           this.username +
           '/ratings'
-      )
-      .subscribe((res) => {
-        console.log(res);
-        this.ratings = res;
-      });
-  }
-}
+          )
+          .subscribe((res) => {
+            console.log(res);
+            this.ratings = res;
+          });
+        }
+      }
+      
