@@ -37,8 +37,8 @@ Desarrolladores: Figueroa Alonso, C.I. V-28536894 y Muchacho Ricardo, C.I. V-278
 
 ### *2. Herramientas ulitizadas para su realización*:
  - IDE (Entorno de Desarrollo Integrado): *Visual Studio Code*.
- - DVCS (Control de Versiones Distribuido): *Git y la plataforma de GitHub*.
- - Frontend: *Angular y Ionic*.
+ - DVCS (Control de Versiones Distribuido): *Git* y la plataforma de *GitHub*.
+ - Frontend: *Angular* y *Ionic*.
  - Backend (API): *Node.js* y *Express.js* framework.
  - DBMS (Sistema de Gestión de Base de Datos): *MongoDB*.
  - REST Client: *Postman API Platform*.
