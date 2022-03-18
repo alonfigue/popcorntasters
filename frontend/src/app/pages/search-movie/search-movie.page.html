@@ -2,11 +2,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-icon name="chevron-back-outline"></ion-icon>
-      <ion-button routerLink="/menu/main">Go Back</ion-button>
+      <ion-button routerLink="/menu/main">Return to Main</ion-button>
     </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-icon (click)="addMovies()" name="add-circle"></ion-icon>
-    </ion-buttons>
+    
     <ion-title class="ion-text-center">Search Movies</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,7 +13,12 @@
   
   <ion-searchbar placeholder="Name, genre or year of publication..." [(ngModel)]="searchTerm" showCancelButton="focus" animated>
     
+    <ion-button color ="medium" >
+      <ion-icon (click)="addMovies()" name="add"></ion-icon>
+    </ion-button>
+    
   </ion-searchbar>
+  
   
   <ion-list>
     <ion-item *ngFor="let moviesearch of movieS | filter:searchTerm" [routerLink]="['/profile-movie/' + moviesearch.id]">
