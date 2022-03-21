@@ -7,16 +7,18 @@ import { RouterModule } from '@angular/router';
 
 
 import { FormsModule } from '@angular/forms';
+import { HeaderProfileComponent } from './header-profile/header-profile.component';
 
 
 
 @NgModule({
   declarations: [
-    HeaderGoMainComponent
+    HeaderGoMainComponent,
+    HeaderProfileComponent 
   ],
   exports: 
   [HeaderGoMainComponent,
-    
+   HeaderProfileComponent 
   ],
   imports: [
     CommonModule,

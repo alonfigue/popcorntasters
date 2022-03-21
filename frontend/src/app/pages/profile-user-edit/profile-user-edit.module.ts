@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ProfileUserEditPageRoutingModule } from './profile-user-edit-routing.module';
 
 import { ProfileUserEditPage } from './profile-user-edit.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProfileUserEditPageRoutingModule
+    ProfileUserEditPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [ProfileUserEditPage]
 })
