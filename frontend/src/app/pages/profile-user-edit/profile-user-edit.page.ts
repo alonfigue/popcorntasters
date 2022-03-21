@@ -45,7 +45,7 @@ export class ProfileUserEditPage implements OnInit {
         if (response.redirected == true) {
           window.location.replace(response.url);
         }
-        console.log('Account edited...');
+        console.log('Account edited...');    
         localStorage.setItem('username', this.username);
         this.router.navigate(['/menu/main']);
         return response.json();
