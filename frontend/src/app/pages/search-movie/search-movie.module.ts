@@ -9,6 +9,7 @@ import { SearchMoviePageRoutingModule } from './search-movie-routing.module';
 import { SearchMoviePage } from './search-movie.page';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FormsModule,
     IonicModule,
     SearchMoviePageRoutingModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    ComponentsModule
   ],
   declarations: [SearchMoviePage]
 })

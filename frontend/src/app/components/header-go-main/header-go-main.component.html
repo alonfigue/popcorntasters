@@ -1,3 +1,10 @@
-<p>
-  header-go-main works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+      <ion-button routerLink="/menu/main">Return to Main</ion-button>
+    </ion-buttons>
+    
+    <ion-title class="ion-text-center">{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
