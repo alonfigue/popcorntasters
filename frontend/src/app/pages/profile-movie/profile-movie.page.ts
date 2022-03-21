@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-profile-movie',
@@ -27,7 +28,9 @@ export class ProfileMoviePage implements OnInit {
   //instantiating
   constructor(
     private http: HttpClient,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    public alertController: AlertController, 
+    public navCtrl: NavController,
     ) {}
     
     ngOnInit() {
@@ -124,34 +127,48 @@ export class ProfileMoviePage implements OnInit {
             .catch((e) => console.log(e));
           }
           
-          addFav() {
+          async addFav() {
             const rating = this.rating;
-            
-            fetch(
-              'https://popcorntasters-api.herokuapp.com/users/' +
-              this.username +
-              '/movies',
-              {
-                method: 'PUT',
-                headers: new Headers({
-                  // Encabezados
-                  'Content-Type': 'application/json',
-                }),
-                body: JSON.stringify({
-                  username: this.username,
-                  id: this.movie_id,
-                  title: this.movie_title,
-                }),
-              }
-              )
-              .then((response) => {
-                console.log('Movie added to favorites...');
-                return response.json();
-              })
-              .then((r) => {
-                console.log(r);
-              })
-              .catch((e) => console.log(e));
+            const alert = await this.alertController.create({
+              header: 'Movie Added to Favorites',
+              buttons:[
+                {
+                  text: 'OK',
+                  handler: () => {  
+                    
+                    fetch(
+                      'https://popcorntasters-api.herokuapp.com/users/' +
+                      this.username +
+                      '/movies',
+                      {
+                        method: 'PUT',
+                        headers: new Headers({
+                          // Encabezados
+                          'Content-Type': 'application/json',
+                        }),
+                        body: JSON.stringify({
+                          username: this.username,
+                          id: this.movie_id,
+                          title: this.movie_title,
+                        }),
+                      }
+                      )
+                      .then((response) => {
+                        console.log('Movie added to favorites...');
+                        return response.json();
+                      })
+                      .then((r) => {
+                        console.log(r);
+                      })
+                      .catch((e) => console.log(e));
+                    }
+                    
+                    
+                  } 
+                ]
+              });    
+              await alert.present();
+              
             }
           }
           
