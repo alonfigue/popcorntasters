@@ -12,6 +12,10 @@ Desarrolladores: Figueroa Alonso, C.I. V-28536894 y Muchacho Ricardo, C.I. V-278
 ## **Descripción del proyecto:**
 
 
+### *LOGO*:
+![imagen](https://user-images.githubusercontent.com/65868683/163551114-aa726afe-529e-441a-abb9-77df2651df59.png)
+
+
 ### *1. Funciones*:
 #### 1.1. General
 - Registro de usuarios.
