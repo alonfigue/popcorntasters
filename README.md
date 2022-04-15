@@ -61,4 +61,4 @@ Desarrolladores: Figueroa Alonso, C.I. V-28536894 y Muchacho Ricardo, C.I. V-278
 
 
 ### *4. Además...*
-Puedes revisar el [repositorio que contiene el backend.](https://github.com/RicardoMuchacho/popcorntasters-api)
+Puedes revisar el [repositorio que contiene el código del backend.](https://github.com/RicardoMuchacho/popcorntasters-api)
