@@ -1,4 +1,4 @@
-# PopcornTasters: A Movies Reviews App
+# Popcorn Tasters: A Movies Reviews App
 Aplicación enfocada para clientes con dispositivos móviles, desarrollada usando Ionic & Angular.
 
 Es una aplicación similar a Rotten Tomatoes.
@@ -53,8 +53,12 @@ Desarrolladores: Figueroa Alonso, C.I. V-28536894 y Muchacho Ricardo, C.I. V-278
  El servidor se encuentra en la nube, por lo que descargando el Android Package (.apk) es suficiente para hacer uso de la aplicación en cualquier dispositivo móvil.
 
  En caso de preferir correr la app localmente, es recomendable hacer un clon del repositorio presente, usando Git, introduciendo en Git Bash lo siguiente: 
- "git clone https://github.com/alonfigue/popcorntasters.git"
+ `git clone https://github.com/alonfigue/popcorntasters.git`
 
- 1. Desde la consola, situarse en la carpeta "frontend", y usar el comando "npm i" para instalar las dependencias (pero antes, asegurarse de tener instalado Node.js).
- 2. Luego, desde la misma carpeta, usar el comando "npm install -g @ionic/cli" para instalar la Interfaz de línea de comandos (CLI) de Ionic globalmente.
- 3. Por último, para correr la aplicación, en la misma carpeta, desde la consola, insertar "ionic serve".
+ 1. Desde la consola, situarse en la carpeta "frontend", y usar el comando `npm i` para instalar las dependencias (pero antes, asegurarse de tener instalado Node.js).
+ 2. Luego, desde la misma carpeta, usar el comando `npm install -g @ionic/cli` para instalar la Interfaz de línea de comandos (CLI) de Ionic globalmente.
+ 3. Por último, para correr la aplicación, en la misma carpeta, desde la consola, insertar `ionic serve`.
+
+
+### *4. Además...*
+Puedes revisar el [repositorio que contiene el backend.](https://github.com/RicardoMuchacho/popcorntasters-api)
