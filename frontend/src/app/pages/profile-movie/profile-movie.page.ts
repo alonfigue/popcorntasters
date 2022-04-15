@@ -60,115 +60,158 @@ export class ProfileMoviePage implements OnInit {
         });
       }
       
-      addComment() {
+      
+      async addComment() {
         const description = this.description;
-        
-        fetch(
-          'https://popcorntasters-api.herokuapp.com/movies/comment/' +
-          this.movie_id,
-          {
-            method: 'POST',
-            headers: new Headers({
-              // Encabezados
-              'Content-Type': 'application/json',
-            }),
-            body: JSON.stringify({
-              username: this.username,
-              movie_id: this.movie_id,
-              description: description,
-            }),
-          }
-          )
-          .then((response) => {
-            console.log(response);
-            if (response.redirected == true) {
-              window.location.replace(response.url);
-            }
-            console.log('New comment created...');
-            return response.json();
-          })
-          .then((r) => {
-            console.log(r);
-          })
-          .catch((e) => console.log(e));
+        const alert = await this.alertController.create({
+          header: 'Comment added',
+          buttons:[
+            {
+              text: 'OK',
+              handler: () => {  
+                
+                fetch(
+                  'https://popcorntasters-api.herokuapp.com/movies/comment/' +
+                  this.movie_id,
+                  {
+                    method: 'POST',
+                    headers: new Headers({
+                      // Encabezados
+                      'Content-Type': 'application/json',
+                    }),
+                    body: JSON.stringify({
+                      username: this.username,
+                      movie_id: this.movie_id,
+                      description: description,
+                    }),
+                  }
+                  )
+                  
+                  
+                  .then((response) => {
+                    console.log(response);
+                    if (response.redirected == true) {
+                      window.location.replace(response.url);
+                    }
+                    console.log('New comment created...');
+                    
+                    window.location.reload();
+                    return response.json();
+                  })
+                  .then((r) => {
+                    console.log(r);
+                  })
+                  .catch((e) => console.log(e));
+                }
+                
+                
+              } 
+            ]
+          });    
+          await alert.present();
+          
         }
         
-        addRating() {
+        
+        
+        async addRating() {
           const rating = this.rating;
-          
-          fetch(
-            'https://popcorntasters-api.herokuapp.com/users/' +
-            this.username +
-            '/ratings',
-            {
-              method: 'POST',
-              headers: new Headers({
-                // Encabezados
-                'Content-Type': 'application/json',
-              }),
-              body: JSON.stringify({
-                username: this.username,
-                id: this.movie_id,
-                rating: rating,
-              }),
-            }
-            )
-            .then((response) => {
-              console.log(response);
-              if (response.redirected == true) {
-                window.location.replace(response.url);
-              }
-              console.log('New rating added...');
-              return response.json();
-            })
-            .then((r) => {
-              console.log(r);
-            })
-            .catch((e) => console.log(e));
-          }
-          
-          async addFav() {
-            const rating = this.rating;
-            const alert = await this.alertController.create({
-              header: 'Movie Added to Favorites',
-              buttons:[
-                {
-                  text: 'OK',
-                  handler: () => {  
-                    
-                    fetch(
-                      'https://popcorntasters-api.herokuapp.com/users/' +
-                      this.username +
-                      '/movies',
-                      {
-                        method: 'PUT',
-                        headers: new Headers({
-                          // Encabezados
-                          'Content-Type': 'application/json',
-                        }),
-                        body: JSON.stringify({
-                          username: this.username,
-                          id: this.movie_id,
-                          title: this.movie_title,
-                        }),
-                      }
-                      )
-                      .then((response) => {
-                        console.log('Movie added to favorites...');
-                        return response.json();
-                      })
-                      .then((r) => {
-                        console.log(r);
-                      })
-                      .catch((e) => console.log(e));
+          const alert = await this.alertController.create({
+            header: 'Rating added',
+            buttons:[
+              {
+                text: 'OK',
+                handler: () => {  
+                  
+                  fetch(
+                    'https://popcorntasters-api.herokuapp.com/users/' +
+                    this.username +
+                    '/ratings',
+                    {
+                      method: 'POST',
+                      headers: new Headers({
+                        // Encabezados
+                        'Content-Type': 'application/json',
+                      }),
+                      body: JSON.stringify({
+                        username: this.username,
+                        id: this.movie_id,
+                        rating: rating,
+                      }),
                     }
+                    )
                     
                     
-                  } 
-                ]
-              });    
-              await alert.present();
-              
-            }
+                    .then((response) => {
+                      console.log(response);
+                      if (response.redirected == true) {
+                        window.location.replace(response.url);
+                      }
+                      console.log('New rating added...');
+                      window.location.reload();
+
+                      return response.json();
+                    })
+                    .then((r) => {
+                      console.log(r);
+                    })
+                    .catch((e) => console.log(e));
+                  }
+                  
+                  
+                } 
+              ]
+            });    
+            await alert.present();
+            
           }
           
+          
+          
+            
+            
+            async addFav() {
+              const rating = this.rating;
+              const alert = await this.alertController.create({
+                header: 'Movie Added to Favorites',
+                buttons:[
+                  {
+                    text: 'OK',
+                    handler: () => {  
+                      
+                      fetch(
+                        'https://popcorntasters-api.herokuapp.com/users/' +
+                        this.username +
+                        '/movies',
+                        {
+                          method: 'PUT',
+                          headers: new Headers({
+                            // Encabezados
+                            'Content-Type': 'application/json',
+                          }),
+                          body: JSON.stringify({
+                            username: this.username,
+                            id: this.movie_id,
+                            title: this.movie_title,
+                          }),
+                        }
+                        )
+                        .then((response) => {
+                          console.log('Movie added to favorites...');
+                          return response.json();
+                        })
+                        .then((r) => {
+                          console.log(r);
+                        })
+                        .catch((e) => console.log(e));
+                      }
+                      
+                      
+                    } 
+                  ]
+                });    
+                await alert.present();
+                
+              }
+            }
+            
