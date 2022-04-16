@@ -38,6 +38,7 @@ export class RegisterPage implements OnInit {
       window.location.replace(response.url);
     }
     console.log('New account created...');
+    alert("New account created...");
     this.router.navigate(['/login']);
     return response.json();
   })
