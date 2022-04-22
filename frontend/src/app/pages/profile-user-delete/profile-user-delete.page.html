@@ -1,30 +1,13 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Delete Account</ion-title>
-    <ion-buttons slot="end">
-      <ion-icon name="chevron-forward-outline"></ion-icon>
-      <ion-button routerLink="/profile-user">Return To User Profile</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<app-header-profile title="Delete Account"></app-header-profile>
+
 <ion-content>
   <div id="header">
     <h1>Delete your Account</h1>
-    <img src="assets/logos/user-delete.png" />
-    <h2>Continue with the verification:</h2>
+    <img src="assets/logos/user-delete.png" />    
   </div>
 
-  <ion-card class="ion-margin">
-    <br />
-    <ion-item>
-      <ion-input
-        [(ngModel)]="password"
-        type="password"
-        placeholder="Enter your password"
-      ></ion-input>
-    </ion-item>
-    <br />
-  </ion-card>
+ <br><br>
+ <h2>Final Confirmation:</h2>
   <ion-button
     color="danger"
     expand="block"

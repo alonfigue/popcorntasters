@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ProfileUserDeletePageRoutingModule } from './profile-user-delete-routing.module';
 
 import { ProfileUserDeletePage } from './profile-user-delete.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProfileUserDeletePageRoutingModule
+    ProfileUserDeletePageRoutingModule,
+    ComponentsModule
   ],
   declarations: [ProfileUserDeletePage]
 })

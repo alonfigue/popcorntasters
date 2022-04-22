@@ -71,14 +71,21 @@ ion-content {
     
     
     #register {
-        padding-right: 160px;
+        padding-right: 120px;
         padding-bottom: 50px;
         padding-left: 120px;
         
         ion-item {
             
             p {
-                text-align: center;
+                font-size: 13px;
+                padding-left: 10px;
+                
+                a {
+                    font-size: 14px;
+                    
+                }
+                
             }
         }
     }

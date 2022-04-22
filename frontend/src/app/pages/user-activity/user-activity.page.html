@@ -1,13 +1,4 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-icon name="chevron-back-outline"></ion-icon>
-      <ion-button routerLink="/menu/main">Return to Main</ion-button>
-    </ion-buttons>
-    
-    <ion-title class="ion-text-center">User Activity</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header-go-main title="User Activity"></app-header-go-main>
 
 <ion-content>
   <ion-card class="swag"> 
@@ -17,7 +8,7 @@
     <ion-list>
       <ion-item *ngFor="let com of comments">
         <ion-label
-        >𝗠𝗼𝘃𝗶𝗲: {{com.movie_title}} - 𝗖𝗼𝗺𝗺𝗲𝗻𝘁:
+        >・𝗠𝗼𝘃𝗶𝗲: {{com.movie_title}} <br>✓ 𝗖𝗼𝗺𝗺𝗲𝗻𝘁:
         {{com.description}}</ion-label
         >
       </ion-item>
@@ -33,7 +24,7 @@
           <ion-list>
             <ion-item *ngFor="let rat of ratings">
               <ion-label
-              >𝗠𝗼𝘃𝗶𝗲: {{rat.movie_title}} - 𝗥𝗮𝘁𝗶𝗻𝗴:
+              >・𝗠𝗼𝘃𝗶𝗲: {{rat.movie_title}} <br>✩ 𝗥𝗮𝘁𝗶𝗻𝗴:
               {{rat.rating}}</ion-label
               >
             </ion-item>

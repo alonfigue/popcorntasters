@@ -34,6 +34,7 @@ export class LoginPage implements OnInit {
     if (response.ok) {
       return response.json();
     } else {
+      alert("Incorrect username or password");
       throw 'The user does not exists or the data does not matches...';
     }
   })

@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { UserTopPageRoutingModule } from './user-top-routing.module';
 
 import { UserTopPage } from './user-top.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UserTopPageRoutingModule
+    UserTopPageRoutingModule,    
+    ComponentsModule
   ],
   declarations: [UserTopPage]
 })
