@@ -29,7 +29,7 @@
     <ion-input [(ngModel)]="password" type="password" placeholder="Password"></ion-input>
   </ion-item>
   
-  <ion-button expand="block" shape="round" (click)= "register()">Sign up</ion-button>
+  <ion-button [disabled]="!username ||!password ||!name" expand="block" shape="round" (click)= "register()">Sign up</ion-button>
   
   <div id="register">
     <p>By pressing 'Sign up' you agree to our terms & conditions.</p>

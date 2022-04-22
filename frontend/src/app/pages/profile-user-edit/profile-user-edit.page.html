@@ -37,7 +37,7 @@
     <br />
     
     <div id="edit">
-      <ion-button expand="block" shape="round" (click)="editUser()"
+      <ion-button [disabled]="!username ||!password ||!name" expand="block" shape="round" (click)="editUser()"
       >Finish Edit</ion-button
       >
     </div>
