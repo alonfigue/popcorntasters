@@ -1,5 +1,6 @@
 # Popcorn Tasters: A Movies Reviews App
 Mobile Web App Link: https://popcorntasters-app.netlify.app/
+
 Mobile app: Download and install Apk provided in this repo
 
 Aplicación enfocada para clientes con dispositivos móviles, desarrollada usando Ionic & Angular.
